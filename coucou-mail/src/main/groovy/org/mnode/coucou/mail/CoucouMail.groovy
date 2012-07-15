@@ -4,6 +4,7 @@ import javax.swing.JFrame
 import javax.swing.UIManager
 import javax.swing.UIManager.LookAndFeelInfo
 
+import org.mnode.ousia.DialogExceptionHandler
 import org.mnode.ousia.OusiaBuilder
 import org.mnode.ousia.SlidingCardLayout
 import org.pushingpixels.substance.api.SubstanceConstants
@@ -53,18 +54,20 @@ Thread.start {
 	}
 }
 
+def actionContext = [:] as ObservableMap
+
 ousia.edt {
 	lookAndFeel(prefs(CoucouMail).get('lookAndFeel', 'system'))
 	
-	frame(id: 'frame', title: 'Coucou Mail', size: [640, 400], visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
+	frame(id: 'frame', title: 'Coucou Mail', size: [640, 400], locationRelativeTo: null, visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
 		panel(id: 'contentPane') {
 			cardLayout(new SlidingCardLayout(), id: 'slider')
 			
-			panel(constraints: 'pane1') {
-				button(text: 'Click 1', actionPerformed: {
-					slider.show(contentPane, 'pane2')
-				})
+			actionContext.showPane2 = {
+				slider.show(contentPane, 'pane2')
 			}
+			
+			panel(new ConfigurationPane(actionContext), constraints: 'pane1')
 			panel(constraints: 'pane2') {
 				button(text: 'Click 2', actionPerformed: {
 					slider.show(contentPane, 'pane1')
@@ -72,4 +75,7 @@ ousia.edt {
 			}
 		}
 	}
+	
+	Thread.defaultUncaughtExceptionHandler = new DialogExceptionHandler(dialogOwner: frame)
+	Authenticator.default = new org.mnode.ousia.DialogAuthenticator(frame)
 }
