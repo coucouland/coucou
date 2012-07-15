@@ -30,13 +30,13 @@ appender("CONSOLE", ConsoleAppender) {
 }
 
 appender("FILE", RollingFileAppender) {
-	file = "${System.getProperty('user.home')}/.coucou/logs/coucou.log"
+	file = "${System.getProperty('user.home')}/.coucou/logs/mail.log"
 	append = true
 	encoder(PatternLayoutEncoder) {
 	  pattern = "[%date] %level %logger - %msg%n"
 	}
 	rollingPolicy(FixedWindowRollingPolicy) {
-		fileNamePattern = "${System.getProperty('user.home')}/.coucou/logs/coucou.log.%i"
+		fileNamePattern = "${System.getProperty('user.home')}/.coucou/logs/mail.log.%i"
 		minIndex = 1
 		maxIndex = 4
 	}
