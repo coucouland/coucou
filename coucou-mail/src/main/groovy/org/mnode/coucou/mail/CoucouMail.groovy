@@ -9,6 +9,7 @@ import org.mnode.ousia.OusiaBuilder
 import org.mnode.ousia.SlidingCardLayout
 import org.pushingpixels.substance.api.SubstanceConstants
 import org.pushingpixels.substance.api.SubstanceLookAndFeel
+import org.pushingpixels.substance.api.fonts.SubstanceFontUtilities
 
 try {
 	new Socket('localhost', 1337)
@@ -57,7 +58,7 @@ Thread.start {
 def actionContext = [:] as ObservableMap
 
 ousia.edt {
-	lookAndFeel(prefs(CoucouMail).get('lookAndFeel', 'system'))
+	lookAndFeel(prefs(CoucouMail).get('lookAndFeel', 'system')).fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
 	
 	frame(id: 'frame', title: 'Coucou Mail', size: [640, 400], locationRelativeTo: null, visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
 		panel(id: 'contentPane') {
