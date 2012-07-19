@@ -58,7 +58,7 @@ Thread.start {
 def actionContext = [:] as ObservableMap
 
 ousia.edt {
-	lookAndFeel(prefs(CoucouMail).get('lookAndFeel', 'system')).fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+	lookAndFeel(prefs(CoucouMail).get('lookAndFeel', 'system')) //.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
 	
 	frame(id: 'frame', title: 'Coucou Mail', size: [640, 400], locationRelativeTo: null, visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
 		panel(id: 'contentPane') {

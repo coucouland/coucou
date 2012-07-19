@@ -13,7 +13,7 @@ class ConfigurationPane extends JXPanel {
 		
 			label(text: 'Mail Configuration', constraints: 'wrap')
 			label(text: 'Email address: ')
-			textField(columns: 15, constraints: 'wrap')
+			textField(prompt: 'Address', columns: 15, constraints: 'wrap')
 			label(text: 'Password: ')
 			passwordField(columns: 15, constraints: 'wrap')
 
