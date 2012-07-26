@@ -1,5 +1,7 @@
 package org.mnode.coucou
 
+import java.awt.Dimension;
+
 import javax.swing.JFrame
 import javax.swing.UIManager
 import javax.swing.UIManager.LookAndFeelInfo
@@ -7,6 +9,7 @@ import javax.swing.UIManager.LookAndFeelInfo
 import org.mnode.ousia.DialogExceptionHandler
 import org.mnode.ousia.OusiaBuilder
 import org.mnode.ousia.SlidingCardLayout
+import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
 import org.pushingpixels.substance.api.SubstanceConstants
 import org.pushingpixels.substance.api.SubstanceLookAndFeel
 import org.pushingpixels.substance.api.fonts.SubstanceFontUtilities
@@ -58,10 +61,22 @@ Thread.start {
 def actionContext = [:] as ObservableMap
 
 ousia.edt {
-///	lookAndFeel(prefs(Main).get('lookAndFeel', 'system')) //.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
-	lookAndFeel('substance-mariner').fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+	lookAndFeel(prefs(Main).get('lookAndFeel', 'system')) //.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+//	lookAndFeel('substance-mariner').fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
 	
-	frame(new MainWindow(), id: 'frame', title: 'Coucou', size: [640, 400], locationRelativeTo: null, visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE)
+	def frameIconImages = [
+		imageIcon('/globe64.png').image,
+		imageIcon('/globe48.png').image,
+		imageIcon('/globe32.png').image,
+		imageIcon('/globe16.png').image
+	]
+	
+//	resizableIcon('/logo.svg', size: [20, 20], id: 'logoIcon')
+	def applicationIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/logo-48.png'), [20, 20] as Dimension)
+	
+	frame(new RibbonWindow(), id: 'frame', title: 'Coucou', size: [640, 400], locationRelativeTo: null,
+		visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE, iconImages: frameIconImages,
+		applicationIcon: applicationIcon, trackingEnabled: true)
 	
 	Thread.defaultUncaughtExceptionHandler = new DialogExceptionHandler(dialogOwner: frame)
 	Authenticator.default = new org.mnode.ousia.DialogAuthenticator(frame)

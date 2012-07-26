@@ -33,12 +33,12 @@
   	<dependency>
   		<groupId>com.github.insubstantial</groupId>
   		<artifactId>trident</artifactId>
-  		<version>7.1</version>
+  		<version>${insubstantial.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>com.github.insubstantial</groupId>
   		<artifactId>substance</artifactId>
-  		<version>7.1</version>
+  		<version>${insubstantial.version}</version>
   	</dependency>
   	<dependency>
   		<groupId>com.miglayout</groupId>
@@ -58,8 +58,21 @@
   	<dependency>
   	    <groupId>com.github.insubstantial</groupId>
   	    <artifactId>flamingo</artifactId>
-  	    <version>7.1</version>
+  	    <version>${insubstantial.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.insubstantial</groupId>
+  		<artifactId>substance-flamingo</artifactId>
+  		<version>${insubstantial.version}</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.github.insubstantial</groupId>
+  		<artifactId>substance-swingx</artifactId>
+  		<version>${insubstantial.version}</version>
   	</dependency>
   </dependencies>
+  <properties>
+  	<insubstantial.version>7.1</insubstantial.version>
+  </properties>
 </project>
 
