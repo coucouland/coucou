@@ -11,6 +11,7 @@
   <packaging>pom</packaging>
   <name>Coucou</name>
   <modules>
+  	<module>coucou-bootstrap</module>
   	<module>coucou-mail</module>
   </modules>
   <dependencies>
