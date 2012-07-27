@@ -26,6 +26,7 @@ class RibbonWindow extends JRibbonFrame {
 				}
 				action id: 'aboutAction', name: rs('About'), accelerator: 'F1', closure: {
 //					System.exit(0)
+					slider.show(contentPane1, 'pane1')
 				}
 			}
 		}
@@ -43,7 +44,7 @@ class RibbonWindow extends JRibbonFrame {
 		}
 		
 		def helpIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
-		ribbon.configureHelp helpIcon, aboutAction
+		ribbon.configureHelp helpIcon, swing.aboutAction
 		
 		ribbon.addTask swing.build {
 			ribbonTask('Home', bands: [
