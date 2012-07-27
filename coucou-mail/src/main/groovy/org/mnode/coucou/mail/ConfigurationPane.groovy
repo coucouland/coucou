@@ -5,7 +5,9 @@ import org.mnode.ousia.OusiaBuilder
 
 class ConfigurationPane extends JXPanel {
 
-	ConfigurationPane(def actionContext) {
+	def actionContext
+	
+	ConfigurationPane() {
 		OusiaBuilder ousia = []
 		layout = ousia.borderLayout()
 		add ousia.panel {

@@ -68,7 +68,7 @@ ousia.edt {
 				slider.show(contentPane, 'pane2')
 			}
 			
-			panel(new ConfigurationPane(actionContext), constraints: 'pane1')
+			panel(new ConfigurationPane(actionContext: actionContext), constraints: 'pane1')
 			panel(constraints: 'pane2') {
 				button(text: 'Click 2', actionPerformed: {
 					slider.show(contentPane, 'pane1')
