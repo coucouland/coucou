@@ -24,6 +24,9 @@ class RibbonWindow extends JRibbonFrame {
 				action id: 'exitAction', name: rs('Exit'), accelerator: shortcut('Q'), closure: {
 					System.exit(0)
 				}
+				action id: 'aboutAction', name: rs('About'), accelerator: 'F1', closure: {
+//					System.exit(0)
+				}
 			}
 		}
 		
@@ -38,6 +41,9 @@ class RibbonWindow extends JRibbonFrame {
 				ribbonApplicationMenuEntryPrimary(icon: exitIcon, text: rs('Exit'), kind: CommandButtonKind.ACTION_ONLY, actionPerformed: exitAction)
 			}
 		}
+		
+		def helpIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
+		ribbon.configureHelp helpIcon, aboutAction
 		
 		ribbon.addTask swing.build {
 			ribbonTask('Home', bands: [
