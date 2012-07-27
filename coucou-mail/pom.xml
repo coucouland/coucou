@@ -7,4 +7,11 @@
   </parent>
   <artifactId>coucou-mail</artifactId>
   <name>Coucou Mail</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.mnode.mstor</groupId>
+  		<artifactId>mstor</artifactId>
+  		<version>0.9.14-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
