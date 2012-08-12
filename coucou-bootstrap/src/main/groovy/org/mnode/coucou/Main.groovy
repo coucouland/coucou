@@ -2,6 +2,7 @@ package org.mnode.coucou
 
 import java.awt.Dimension;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame
 import javax.swing.UIManager
 import javax.swing.UIManager.LookAndFeelInfo
@@ -63,6 +64,8 @@ def actionContext = [:] as ObservableMap
 ousia.edt {
 	lookAndFeel(prefs(Main).get('lookAndFeel', 'system')) //.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
 //	lookAndFeel('substance-mariner').fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+	
+	fileChooser(id: 'dirChooser', fileSelectionMode: JFileChooser.FILES_AND_DIRECTORIES)
 	
 	def frameIconImages = [
 		imageIcon('/globe64.png').image,
