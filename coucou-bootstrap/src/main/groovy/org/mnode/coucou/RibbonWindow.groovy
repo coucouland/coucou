@@ -28,6 +28,8 @@ class RibbonWindow extends JRibbonFrame {
 //					System.exit(0)
 					slider.show(contentPane1, 'pane1')
 				}
+				action id: 'preferencesAction', name: rs('Preferences'), closure: {
+				}
 			}
 		}
 		
@@ -35,11 +37,21 @@ class RibbonWindow extends JRibbonFrame {
 			def newIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 			def exitIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/exit.png'), [16, 16] as Dimension)
 			
-			ribbonApplicationMenu {
+			ribbonApplicationMenu(id: 'appMenu') {
 				ribbonApplicationMenuEntryPrimary(id: 'newMenu', icon: newIcon, text: rs('New'), kind: CommandButtonKind.POPUP_ONLY)
 //				newMenu.addSecondaryMenuGroup 'Create a new item', newAction
+				appMenu.addMenuSeparator()
+				
+				ribbonApplicationMenuEntryPrimary(id: 'saveAsMenu', text: rs('Save As'), kind: CommandButtonKind.ACTION_AND_POPUP_MAIN_ACTION)
+				appMenu.addMenuSeparator()
+				
+				ribbonApplicationMenuEntryPrimary(id: 'importMenu', text: rs('Import'), kind: CommandButtonKind.POPUP_ONLY)
+				ribbonApplicationMenuEntryPrimary(id: 'exportMenu', text: rs('Export'), kind: CommandButtonKind.POPUP_ONLY)
+				appMenu.addMenuSeparator()
 				
 				ribbonApplicationMenuEntryPrimary(icon: exitIcon, text: rs('Exit'), kind: CommandButtonKind.ACTION_ONLY, actionPerformed: exitAction)
+				
+				ribbonApplicationMenuEntryFooter(text: rs('Preferences'), actionPerformed: preferencesAction)
 			}
 		}
 		
@@ -72,7 +84,7 @@ class RibbonWindow extends JRibbonFrame {
 		}
 		
 		ribbon.addTask swing.build {
-				ribbonTask('View', bands: [
+			ribbonTask('View', bands: [
 				ribbonBand('Group By', id: 'groupByBand', resizePolicies: ['mirror']),
 				ribbonBand('Sort By', id: 'sortBand', resizePolicies: ['mirror']),
 				ribbonBand('Filter', id: 'filterBand', resizePolicies: ['mirror']),
@@ -92,24 +104,6 @@ class RibbonWindow extends JRibbonFrame {
 			])
 		}
 		
-		add swing.panel(id: 'contentPane1') {
-			cardLayout(new SlidingCardLayout(), id: 'slider')
-			
-//			actionContext.showPane2 = {
-//				slider.show(contentPane, 'pane2')
-//			}
-			
-//			panel(new ConfigurationPane(actionContext), constraints: 'pane1')
-			panel(constraints: 'pane1') {
-				button(text: 'Click 1', actionPerformed: {
-					slider.show(contentPane1, 'pane2')
-				})
-			}
-			panel(constraints: 'pane2') {
-				button(text: 'Click 2', actionPerformed: {
-					slider.show(contentPane1, 'pane1')
-				})
-			}
-		}
+		add swing.panel(new ViewPane(), id: 'contentPane1')
 	}
 }
