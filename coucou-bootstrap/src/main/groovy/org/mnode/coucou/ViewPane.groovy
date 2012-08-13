@@ -21,6 +21,8 @@ class ViewPane extends JXPanel {
 				show('pane1')
 			})
 		}, 'pane2'
+        add new AboutView(), 'about'
+        add new PreferencesView(), 'preferences'
 	}
 	
 	void show(String viewId) {

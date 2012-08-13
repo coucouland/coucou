@@ -1,20 +1,23 @@
 package org.mnode.coucou
 
 import java.awt.Color
-import java.awt.Dimension;
+import java.awt.Dimension
 import java.awt.Font
+import java.awt.event.ActionListener
 import java.awt.event.KeyEvent
 
 import org.mnode.ousia.OusiaBuilder
-import org.mnode.ousia.SlidingCardLayout
-import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind;
-import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon;
+import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind
+import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame
+import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority
 
 class RibbonWindow extends JRibbonFrame {
 
 	OusiaBuilder swing = []
 	
+    def actionContext = [] as ObservableMap
+    
 	RibbonWindow() {
 		swing.build {
 			actions {
@@ -26,10 +29,14 @@ class RibbonWindow extends JRibbonFrame {
 				}
 				action id: 'aboutAction', name: rs('About'), accelerator: 'F1', closure: {
 //					System.exit(0)
-					slider.show(contentPane1, 'pane1')
+//					slider.show(contentPane1, 'pane1')
+                    contentPane1.show('about')
 				}
 				action id: 'preferencesAction', name: rs('Preferences'), closure: {
+                    contentPane1.show('preferences')
 				}
+                action id: 'refreshAction', name: rs('Refresh'), closure: {
+                }
 			}
 		}
 		
@@ -40,6 +47,7 @@ class RibbonWindow extends JRibbonFrame {
 			ribbonApplicationMenu(id: 'appMenu') {
 				ribbonApplicationMenuEntryPrimary(id: 'newMenu', icon: newIcon, text: rs('New'), kind: CommandButtonKind.POPUP_ONLY)
 //				newMenu.addSecondaryMenuGroup 'Create a new item', newAction
+                
 				appMenu.addMenuSeparator()
 				
 				ribbonApplicationMenuEntryPrimary(id: 'saveAsMenu', text: rs('Save As'), kind: CommandButtonKind.ACTION_AND_POPUP_MAIN_ACTION)
@@ -57,9 +65,41 @@ class RibbonWindow extends JRibbonFrame {
 		
 		def helpIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 		ribbon.configureHelp helpIcon, swing.aboutAction
-		
+        
+        def taskIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
+        def previousIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
+        def nextIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
+        def refreshIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
+        def cancelLoadIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
+        
 		ribbon.addTask swing.build {
 			ribbonTask('Home', bands: [
+                ribbonBand(rs('Navigate'), icon: taskIcon, id: 'navigationBand', resizePolicies: ['mirror']) {
+                    ribbonComponent(
+                        component: commandButton(previousIcon, text: rs('Previous'), id: 'previousButton', actionPerformed: {actionContext.previousItem()} as ActionListener) {
+                                bind(source: actionContext, sourceProperty: 'previousItem', target: previousButton, targetProperty: 'enabled', converter: {it != null})
+                            },
+                        priority: RibbonElementPriority.TOP
+                    )
+                    ribbonComponent(
+                        component: commandButton(nextIcon, text: rs('Next'), id: 'nextButton', actionPerformed: {actionContext.nextItem()} as ActionListener) {
+                                bind(source: actionContext, sourceProperty: 'nextItem', target: nextButton, targetProperty: 'enabled', converter: {it != null})
+                            },
+                        priority: RibbonElementPriority.TOP
+                    )
+                },
+            
+                ribbonBand(rs('Load'), icon: taskIcon, id: 'loadBand', resizePolicies: ['mirror']) {
+                    ribbonComponent(
+                        component: commandButton(refreshIcon, action: refreshAction),
+                        priority: RibbonElementPriority.TOP
+                    )
+                    ribbonComponent(
+                        component: commandButton(cancelLoadIcon, text: rs('Cancel')),
+                        priority: RibbonElementPriority.TOP
+                    )
+                },
+        
 				ribbonBand('Quick Search', id: 'quickSearchBand', resizePolicies: ['mirror']) {
 					ribbonComponent([
 						component: textField(id: 'quickSearchField', columns: 14, enabled: false, prompt: 'Search..', promptFontStyle: Font.ITALIC, promptForeground: Color.LIGHT_GRAY,
