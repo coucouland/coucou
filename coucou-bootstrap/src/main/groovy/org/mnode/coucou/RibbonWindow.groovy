@@ -1,5 +1,6 @@
 package org.mnode.coucou
 
+import java.awt.BorderLayout
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.Font
@@ -14,11 +15,9 @@ import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority
 
 class RibbonWindow extends JRibbonFrame {
 
-	OusiaBuilder swing = []
-	
     def actionContext = [] as ObservableMap
     
-	RibbonWindow() {
+	RibbonWindow(def swing = new OusiaBuilder()) {
 		swing.build {
 			actions {
 				action id: 'newAction', name: rs('New Item'), accelerator: shortcut('N'), closure: {
@@ -43,6 +42,7 @@ class RibbonWindow extends JRibbonFrame {
 		ribbon.applicationMenu = swing.build {
 			def newIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 			def exitIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/exit.png'), [16, 16] as Dimension)
+			def blankIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/blank.png'), [16, 16] as Dimension)
 			
 			ribbonApplicationMenu(id: 'appMenu') {
 				ribbonApplicationMenuEntryPrimary(id: 'newMenu', icon: newIcon, text: rs('New'), kind: CommandButtonKind.POPUP_ONLY)
@@ -50,11 +50,11 @@ class RibbonWindow extends JRibbonFrame {
                 
 				appMenu.addMenuSeparator()
 				
-				ribbonApplicationMenuEntryPrimary(id: 'saveAsMenu', text: rs('Save As'), kind: CommandButtonKind.ACTION_AND_POPUP_MAIN_ACTION)
+				ribbonApplicationMenuEntryPrimary(id: 'saveAsMenu', icon: blankIcon, text: rs('Save As'), kind: CommandButtonKind.ACTION_AND_POPUP_MAIN_ACTION)
 				appMenu.addMenuSeparator()
 				
-				ribbonApplicationMenuEntryPrimary(id: 'importMenu', text: rs('Import'), kind: CommandButtonKind.POPUP_ONLY)
-				ribbonApplicationMenuEntryPrimary(id: 'exportMenu', text: rs('Export'), kind: CommandButtonKind.POPUP_ONLY)
+				ribbonApplicationMenuEntryPrimary(id: 'importMenu', icon: blankIcon, text: rs('Import'), kind: CommandButtonKind.POPUP_ONLY)
+				ribbonApplicationMenuEntryPrimary(id: 'exportMenu', icon: blankIcon, text: rs('Export'), kind: CommandButtonKind.POPUP_ONLY)
 				appMenu.addMenuSeparator()
 				
 				ribbonApplicationMenuEntryPrimary(icon: exitIcon, text: rs('Exit'), kind: CommandButtonKind.ACTION_ONLY, actionPerformed: exitAction)
@@ -144,6 +144,10 @@ class RibbonWindow extends JRibbonFrame {
 			])
 		}
 		
-		add swing.panel(new ViewPane(), id: 'contentPane1')
+        add swing.panel {
+            borderLayout()
+            panel(new BreadcrumbPane(), id: 'breadcrumb', constraints: BorderLayout.NORTH)
+            panel(new ViewPane(), id: 'contentPane1')
+        }
 	}
 }

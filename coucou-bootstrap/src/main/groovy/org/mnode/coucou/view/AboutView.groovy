@@ -1,4 +1,4 @@
-package org.mnode.coucou
+package org.mnode.coucou.view
 
 import java.awt.BorderLayout
 import java.awt.Color
@@ -16,7 +16,7 @@ class AboutView extends JXPanel {
         layout = swing.borderLayout()
         add swing.panel {
             borderLayout()
-            label(text: "${rs('Coucou')} 1.0", constraints: BorderLayout.NORTH, border: emptyBorder(10))
+//            label(text: "${rs('Coucou')} 1.0", constraints: BorderLayout.NORTH, border: emptyBorder(10))
             panel(constraints: BorderLayout.CENTER, border: emptyBorder(10)) {
                 borderLayout()
                 scrollPane(horizontalScrollBarPolicy: JScrollPane.HORIZONTAL_SCROLLBAR_NEVER, border: null) {

@@ -1,14 +1,14 @@
 package org.mnode.coucou
 
 import org.jdesktop.swingx.JXPanel
+import org.mnode.coucou.view.AboutView;
+import org.mnode.coucou.view.PreferencesView;
 import org.mnode.ousia.OusiaBuilder
 import org.mnode.ousia.SlidingCardLayout
 
 class ViewPane extends JXPanel {
-
-	OusiaBuilder swing = []
 	
-	ViewPane() {
+	ViewPane(def swing = new OusiaBuilder()) {
 		layout = swing.cardLayout(new SlidingCardLayout(), id: 'slider')
 		
 		add swing.panel {
@@ -22,12 +22,10 @@ class ViewPane extends JXPanel {
 			})
 		}, 'pane2'
         add new AboutView(), 'about'
-        add new PreferencesView(), 'preferences'
+        add new PreferencesView(swing), 'preferences'
 	}
 	
 	void show(String viewId) {
-		swing.edt {
-			slider.show(this, viewId)
-		}
+		layout.show(this, viewId)
 	}
 }

@@ -33,14 +33,6 @@ UIManager.installLookAndFeel(new LookAndFeelInfo('Business Black Steel', 'substa
 UIManager.installLookAndFeel(new LookAndFeelInfo('Business Blue Steel', 'substance-business-blue-steel'))
 UIManager.installLookAndFeel(new LookAndFeelInfo('Raven', 'substance-raven'))
 
-def currentLookAndFeelInfo = {
-	for (laf in UIManager.installedLookAndFeels) {
-		if (UIManager.lookAndFeel.name == laf.name) {
-			return laf
-		}
-	}
-	return new LookAndFeelInfo(UIManager.lookAndFeel.name, UIManager.lookAndFeel.ID)
-}
 ///
 
 
@@ -63,7 +55,10 @@ def actionContext = [:] as ObservableMap
 
 ousia.edt {
 	lookAndFeel(prefs(Main).get('lookAndFeel', 'system')) //.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
-//	lookAndFeel('substance-mariner').fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+//	lookAndFeel('substance-office-blue-2007').fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(1.2)
+    if (UIManager.lookAndFeel instanceof SubstanceLookAndFeel) {
+        SubstanceLookAndFeel.fontPolicy = SubstanceFontUtilities.getScaledFontPolicy(prefs(Main).getInt('scalingFactor', 10) / 10)
+    }
 	
 	fileChooser(id: 'dirChooser', fileSelectionMode: JFileChooser.FILES_AND_DIRECTORIES)
 	
@@ -77,7 +72,7 @@ ousia.edt {
 //	resizableIcon('/logo.svg', size: [20, 20], id: 'logoIcon')
 	def applicationIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/logo-48.png'), [20, 20] as Dimension)
 	
-	frame(new RibbonWindow(), id: 'frame', title: 'Coucou', size: [640, 400], locationRelativeTo: null,
+	frame(new RibbonWindow(ousia), id: 'frame', title: 'Coucou', size: [640, 400], locationRelativeTo: null,
 		visible: true, defaultCloseOperation: JFrame.EXIT_ON_CLOSE, iconImages: frameIconImages,
 		applicationIcon: applicationIcon, trackingEnabled: true)
 	
