@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent
 
 import org.mnode.ousia.OusiaBuilder
 import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind
+import org.pushingpixels.flamingo.api.common.icon.EmptyResizableIcon
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon
 import org.pushingpixels.flamingo.api.ribbon.JRibbonFrame
 import org.pushingpixels.flamingo.api.ribbon.RibbonElementPriority
@@ -42,7 +43,7 @@ class RibbonWindow extends JRibbonFrame {
 		ribbon.applicationMenu = swing.build {
 			def newIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 			def exitIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/exit.png'), [16, 16] as Dimension)
-			def blankIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/blank.png'), [16, 16] as Dimension)
+			def blankIcon = new EmptyResizableIcon(16)
 			
 			ribbonApplicationMenu(id: 'appMenu') {
 				ribbonApplicationMenuEntryPrimary(id: 'newMenu', icon: newIcon, text: rs('New'), kind: CommandButtonKind.POPUP_ONLY)
