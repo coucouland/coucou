@@ -7,5 +7,158 @@
   </parent>
   <artifactId>coucou-bootstrap</artifactId>
   <name>Coucou Bootstrap</name>
-</project>
 
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Override to Java 6.. -->
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+<!--         
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target>
+                                <taskdef name="transcode" classname="org.pushingpixels.flamingo.api.svg.SvgTranscoderTask" classpathref="maven.plugin.classpath"/>
+                                <transcode package="org.mnode.coucou.icons" template="resizable" namingStrategy="camelcase" toDir="target/generated-sources/org/mnode/coucou/icons">
+                                    <fileset dir="src/main/resources">
+                                        <include name="**/*.svg"/>
+                                    </fileset>
+                                </transcode>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                    	<groupId>org.pushingpixels</groupId>
+                    	<artifactId>
+                    		flamingo-svg-transcoder-ant
+                    	</artifactId>
+                    	<version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals><goal>add-source</goal></goals>
+                        <configuration>
+                            <sources>
+                                <source>target/generated-sources</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+<plugin>
+<groupId>org.codeartisans</groupId>
+<artifactId>flamingo-maven-plugin</artifactId>
+    <version>1.1</version>
+<executions>
+    <execution>
+    <id>actions</id>
+    <phase>generate-sources</phase>
+    <goals>
+        <goal>transcode</goal>
+    </goals>
+    <configuration>
+        <sourceDirectory>${project.basedir}/src/main/resources/icons/svg</sourceDirectory>
+        <outputPackage>org.mnode.coucou.icons</outputPackage>
+        <implementsResizableIcon>true</implementsResizableIcon><!-- Defaults to false -->
+        <stopOnFailure>false</stopOnFailure> <!-- Defaults to true -->
+    </configuration>
+    </execution>
+</executions>
+</plugin>            
+        </plugins>
+        <pluginManagement>
+        	<plugins>
+        		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        		<plugin>
+        			<groupId>org.eclipse.m2e</groupId>
+        			<artifactId>lifecycle-mapping</artifactId>
+        			<version>1.0.0</version>
+        			<configuration>
+        				<lifecycleMappingMetadata>
+        					<pluginExecutions>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.apache.maven.plugins
+        								</groupId>
+        								<artifactId>
+        									maven-antrun-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.7,)
+        								</versionRange>
+        								<goals>
+        									<goal>run</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.codehaus.mojo
+        								</groupId>
+        								<artifactId>
+        									build-helper-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.7,)
+        								</versionRange>
+        								<goals>
+        									<goal>add-source</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        						<pluginExecution>
+        							<pluginExecutionFilter>
+        								<groupId>
+        									org.codeartisans
+        								</groupId>
+        								<artifactId>
+        									flamingo-maven-plugin
+        								</artifactId>
+        								<versionRange>
+        									[1.1,)
+        								</versionRange>
+        								<goals>
+        									<goal>transcode</goal>
+        								</goals>
+        							</pluginExecutionFilter>
+        							<action>
+        								<ignore></ignore>
+        							</action>
+        						</pluginExecution>
+        					</pluginExecutions>
+        				</lifecycleMappingMetadata>
+        			</configuration>
+        		</plugin>
+        	</plugins>
+        </pluginManagement>
+    </build>  
+</project>

@@ -7,6 +7,7 @@ import java.awt.Font
 import java.awt.event.ActionListener
 import java.awt.event.KeyEvent
 
+import org.mnode.coucou.icons.StarSvgIcon
 import org.mnode.ousia.OusiaBuilder
 import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind
 import org.pushingpixels.flamingo.api.common.icon.EmptyResizableIcon
@@ -41,6 +42,7 @@ class RibbonWindow extends JRibbonFrame {
 		}
 		
 		ribbon.applicationMenu = swing.build {
+//			def newIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 			def newIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
 			def exitIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/exit.png'), [16, 16] as Dimension)
 			def blankIcon = new EmptyResizableIcon(16)
@@ -64,7 +66,8 @@ class RibbonWindow extends JRibbonFrame {
 			}
 		}
 		
-		def helpIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
+//		def helpIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/add.png'), [16, 16] as Dimension)
+		StarSvgIcon helpIcon = []
 		ribbon.configureHelp helpIcon, swing.aboutAction
         
         def taskIcon = ImageWrapperResizableIcon.getIcon(Main.getResource('/task.png'), [16, 16] as Dimension)
