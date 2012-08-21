@@ -81,8 +81,8 @@
     <configuration>
         <sourceDirectory>${project.basedir}/src/main/resources/icons/svg</sourceDirectory>
         <outputPackage>org.mnode.coucou.icons</outputPackage>
-        <implementsResizableIcon>true</implementsResizableIcon><!-- Defaults to false -->
-        <stopOnFailure>false</stopOnFailure> <!-- Defaults to true -->
+        <implementsResizableIcon>true</implementsResizableIcon><!- Defaults to false ->
+        <stopOnFailure>false</stopOnFailure> <!- Defaults to true ->
     </configuration>
     </execution>
 </executions>
