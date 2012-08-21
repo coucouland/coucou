@@ -7,7 +7,7 @@ import java.awt.Font
 import java.awt.event.ActionListener
 import java.awt.event.KeyEvent
 
-import org.mnode.coucou.icons.StarSvgIcon
+import org.mnode.ousia.flamingo.icons.StarSvgIcon
 import org.mnode.ousia.OusiaBuilder
 import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind
 import org.pushingpixels.flamingo.api.common.icon.EmptyResizableIcon

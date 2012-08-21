@@ -11,7 +11,7 @@ import org.pushingpixels.substance.api.SubstanceConstants
 import org.pushingpixels.substance.api.SubstanceLookAndFeel
 import org.pushingpixels.substance.api.fonts.SubstanceFontUtilities
 
-import org.mnode.coucou.icons.LogoSvgIcon
+import org.mnode.ousia.flamingo.icons.LogoSvgIcon
 
 try {
 	new Socket('localhost', 1337)
