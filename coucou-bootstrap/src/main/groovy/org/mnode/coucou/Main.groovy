@@ -7,11 +7,10 @@ import javax.swing.UIManager.LookAndFeelInfo
 
 import org.mnode.ousia.DialogExceptionHandler
 import org.mnode.ousia.OusiaBuilder
+import org.mnode.ousia.flamingo.icons.LogoSvgIcon
 import org.pushingpixels.substance.api.SubstanceConstants
 import org.pushingpixels.substance.api.SubstanceLookAndFeel
 import org.pushingpixels.substance.api.fonts.SubstanceFontUtilities
-
-import org.mnode.ousia.flamingo.icons.LogoSvgIcon
 
 try {
 	new Socket('localhost', 1337)
