@@ -7,8 +7,12 @@ import java.awt.Font
 import java.awt.event.ActionListener
 import java.awt.event.KeyEvent
 
-import org.mnode.ousia.flamingo.icons.StarSvgIcon
 import org.mnode.ousia.OusiaBuilder
+import org.mnode.ousia.flamingo.icons.NextSvgIcon;
+import org.mnode.ousia.flamingo.icons.PowerSvgIcon
+import org.mnode.ousia.flamingo.icons.PreviousSvgIcon
+import org.mnode.ousia.flamingo.icons.ReloadSvgIcon;
+import org.mnode.ousia.flamingo.icons.StarSvgIcon
 import org.pushingpixels.flamingo.api.common.JCommandButton.CommandButtonKind
 import org.pushingpixels.flamingo.api.common.icon.EmptyResizableIcon
 import org.pushingpixels.flamingo.api.common.icon.ImageWrapperResizableIcon
@@ -60,7 +64,7 @@ class RibbonWindow extends JRibbonFrame {
 				ribbonApplicationMenuEntryPrimary(id: 'exportMenu', icon: blankIcon, text: rs('Export'), kind: CommandButtonKind.POPUP_ONLY)
 				appMenu.addMenuSeparator()
 				
-				ribbonApplicationMenuEntryPrimary(icon: exitIcon, text: rs('Exit'), kind: CommandButtonKind.ACTION_ONLY, actionPerformed: exitAction)
+				ribbonApplicationMenuEntryPrimary(icon: new PowerSvgIcon(), text: rs('Exit'), kind: CommandButtonKind.ACTION_ONLY, actionPerformed: exitAction)
 				
 				ribbonApplicationMenuEntryFooter(text: rs('Preferences'), actionPerformed: preferencesAction)
 			}
@@ -80,13 +84,13 @@ class RibbonWindow extends JRibbonFrame {
 			ribbonTask('Home', bands: [
                 ribbonBand(rs('Navigate'), icon: taskIcon, id: 'navigationBand', resizePolicies: ['mirror']) {
                     ribbonComponent(
-                        component: commandButton(previousIcon, text: rs('Previous'), id: 'previousButton', actionPerformed: {actionContext.previousItem()} as ActionListener) {
+                        component: commandButton(new PreviousSvgIcon(), text: rs('Previous'), id: 'previousButton', actionPerformed: {actionContext.previousItem()} as ActionListener) {
                                 bind(source: actionContext, sourceProperty: 'previousItem', target: previousButton, targetProperty: 'enabled', converter: {it != null})
                             },
                         priority: RibbonElementPriority.TOP
                     )
                     ribbonComponent(
-                        component: commandButton(nextIcon, text: rs('Next'), id: 'nextButton', actionPerformed: {actionContext.nextItem()} as ActionListener) {
+                        component: commandButton(new NextSvgIcon(), text: rs('Next'), id: 'nextButton', actionPerformed: {actionContext.nextItem()} as ActionListener) {
                                 bind(source: actionContext, sourceProperty: 'nextItem', target: nextButton, targetProperty: 'enabled', converter: {it != null})
                             },
                         priority: RibbonElementPriority.TOP
@@ -95,7 +99,7 @@ class RibbonWindow extends JRibbonFrame {
             
                 ribbonBand(rs('Load'), icon: taskIcon, id: 'loadBand', resizePolicies: ['mirror']) {
                     ribbonComponent(
-                        component: commandButton(refreshIcon, action: refreshAction),
+                        component: commandButton(new ReloadSvgIcon(), action: refreshAction),
                         priority: RibbonElementPriority.TOP
                     )
                     ribbonComponent(
