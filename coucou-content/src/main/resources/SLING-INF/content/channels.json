@@ -1,0 +1,13 @@
+{
+  "title": "Channels - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/channel-list",
+    "work": {
+      "sling:resourceType": "coucou/block/channel",
+      "title": "Work",
+      "description": "Work related communications"
+    }
+  }
+}

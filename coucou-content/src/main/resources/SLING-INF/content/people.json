@@ -1,0 +1,13 @@
+{
+  "title": "People - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/person-list",
+    "work": {
+      "sling:resourceType": "coucou/block/person",
+      "title": "John Smith",
+      "description": "Colleague"
+    }
+  }
+}

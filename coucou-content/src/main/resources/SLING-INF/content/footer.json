@@ -1,0 +1,6 @@
+{
+  "title":"Coucou",
+  "sling:resourceType":"coucou/footer",
+  "jcr:primaryType":"nt:unstructured",
+  "copyright": "2016 Micronode, Inc."
+}

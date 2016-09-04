@@ -1,0 +1,13 @@
+{
+  "title": "Organisations - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/org-list",
+    "work": {
+      "sling:resourceType": "coucou/block/org",
+      "title": "Acme Pty. Ltd.",
+      "description": "Importer/exporter"
+    }
+  }
+}

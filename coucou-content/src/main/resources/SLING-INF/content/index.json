@@ -1,0 +1,6 @@
+{
+  "title":"Coucou",
+  "description": "A communications platform",
+  "sling:resourceType":"coucou/page/index",
+  "jcr:primaryType":"nt:unstructured"
+}
