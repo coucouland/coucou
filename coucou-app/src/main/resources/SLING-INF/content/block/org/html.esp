@@ -1,0 +1,13 @@
+<div class="col-sm-2">
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title"><%= currentNode.title %></h4>
+            <h6 class="card-subtitle text-muted"><%= currentNode.description %></h6>
+        </div>
+        <img src="http://lorempixel.com/g/150/100/business" alt="Telstra image">
+        <div class="card-block">
+            <p class="card-text">Your latest bill.</p>
+            <a href="#" class="card-link">Open</a>
+        </div>
+    </div>
+</div>

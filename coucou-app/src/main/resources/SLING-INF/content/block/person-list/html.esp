@@ -1,0 +1,17 @@
+
+<h3>People</h3>
+<p>Recent connections to individuals</p>
+<div class="row">
+<%
+    var count = 0;
+    var limit = request.requestPathInfo.suffix ? parseInt(request.requestPathInfo.suffix.substring(1)) : Number.MAX_SAFE_INTEGER;
+
+    for(var i in currentNode) {
+        if (currentNode[i]['sling:resourceType'] == "coucou/block/person") {
+            sling.include(currentNode[i].path + ".html");
+
+            if (count >= limit) break;
+        }
+    }
+%>
+</div>

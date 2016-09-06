@@ -16,7 +16,8 @@
     <title><%= currentNode.title %></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/libs/wp-bootstrap/bower_components/bootstrap-css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="/libs/wp-bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -44,16 +45,9 @@
 
     <% sling.include("header.html/" + currentNode.path); %>
 
-    <div class="row">
-        <% sling.include("channels/list.html"); %>
-    </div>
-    <div class="row">
-        <% sling.include("people/list.html"); %>
-    </div>
-    <div class="row">
-        <% sling.include("organisations/list.html"); %>
-    </div>
-
+    <% sling.include("channels/list.html"); %>
+    <% sling.include("people/list.html"); %>
+    <% sling.include("organisations/list.html"); %>
 
 </div> <!-- /container -->
 
