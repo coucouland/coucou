@@ -1,0 +1,15 @@
+{
+  "title": "Tasks - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/task-list",
+    "title": "Tasks",
+    "description": "Recent and future tasks",
+    "submit-timesheet": {
+      "sling:resourceType": "coucou/block/task",
+      "title": "NAB - Submit Timesheet",
+      "description": "Weekly repeating event"
+    }
+  }
+}

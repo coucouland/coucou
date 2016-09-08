@@ -1,4 +1,23 @@
 <% var page = request.resourceResolver.resolve(request.requestPathInfo.suffix); %>
+
+<nav class="breadcrumb">
+    <a class="breadcrumb-item" href="/content/coucou/index.html">Home</a>
+    <%
+        if (page.adaptTo(javax.jcr.Node)['sling:resourceType'] == "coucou/block/person") {
+            out.write("<a class=\"breadcrumb-item\" href=\"/content/coucou/people.html\">People</a>");
+        } else if (page.adaptTo(javax.jcr.Node)['sling:resourceType'] == "coucou/block/event") {
+            out.write("<a class=\"breadcrumb-item\" href=\"/content/coucou/events.html\">Events</a>");
+        } else if (page.adaptTo(javax.jcr.Node)['sling:resourceType'] == "coucou/block/task") {
+            out.write("<a class=\"breadcrumb-item\" href=\"/content/coucou/tasks.html\">Tasks</a>");
+        } else if (page.adaptTo(javax.jcr.Node)['sling:resourceType'] == "coucou/block/topic") {
+            out.write("<a class=\"breadcrumb-item\" href=\"/content/coucou/topics.html\">Topics</a>");
+        } else if (page.adaptTo(javax.jcr.Node)['sling:resourceType'] == "coucou/block/org") {
+            out.write("<a class=\"breadcrumb-item\" href=\"/content/coucou/organisations.html\">Organisations</a>");
+        }
+    %>
+    <span class="breadcrumb-item active"><%= page.adaptTo(javax.jcr.Node).title %></span>
+</nav>
+
 <div class="page-header">
 <h1><%= page.adaptTo(javax.jcr.Node).title %></h1>
 <p class="lead"><%= page.adaptTo(javax.jcr.Node).description %></p>

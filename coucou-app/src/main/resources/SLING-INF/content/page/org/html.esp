@@ -1,7 +1,3 @@
-<%
-    /* hard-code the content type for index page as it may be accessed without an html extension */
-    response.contentType = "text/html"
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +9,8 @@
     <meta name="author" content="">
     <link rel="icon" href="/apps/coucou/favicon.ico">
 
-    <title><%= currentNode.title %></title>
+    <% var orgNode = request.resourceResolver.resolve(request.requestPathInfo.suffix); %>
+    <title><%= orgNode.adaptTo(javax.jcr.Node).title %><%= currentNode.title %></title>
 
     <!-- Bootstrap core CSS -->
     <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
@@ -43,13 +40,31 @@
 <body>
 <div class="container">
 
-    <% sling.include("header.html/" + currentNode.path); %>
+    <% sling.include("header.html/" + orgNode.path); %>
 
-    <% sling.include("topics/list.html"); %>
-    <% sling.include("events/list.html"); %>
-    <% sling.include("tasks/list.html"); %>
-    <% sling.include("people/list.html"); %>
-    <% sling.include("organisations/list.html"); %>
+    <!-- org details -->
+    <div class="row">
+        <% sling.include(orgNode.path + ".html"); %>
+    </div>
+
+    <!-- related events -->
+    <div class="row">
+        <% sling.include("events/list.html" +  orgNode.path); %>
+    </div>
+
+    <!-- related topics -->
+    <div class="row">
+        <% sling.include("topics/list.html" +  orgNode.path); %>
+    </div>
+
+    <!-- related people -->
+    <div class="row">
+        <% sling.include("people/list.html" + orgNode.path); %>
+    </div>
+
+    <!-- related resources -->
+    <div class="row">
+    </div>
 
 </div> <!-- /container -->
 

@@ -1,0 +1,15 @@
+{
+  "title": "Events - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/event-list",
+    "title": "Events",
+    "description": "Recent and future events",
+    "wedding-anniversary": {
+      "sling:resourceType": "coucou/block/event",
+      "title": "Wedding Anniversary",
+      "description": "Annual repeating event"
+    }
+  }
+}

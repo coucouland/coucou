@@ -1,0 +1,20 @@
+{
+  "title": "Topics - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/topic-list",
+    "title": "Topics",
+    "description": "Recent topics",
+    "work": {
+      "sling:resourceType": "coucou/block/topic",
+      "title": "Work",
+      "description": "Work related communications"
+    },
+    "tax": {
+      "sling:resourceType": "coucou/block/topic",
+      "title": "Tax",
+      "description": "Dividends, donations, pay summaries, etc."
+    }
+  }
+}

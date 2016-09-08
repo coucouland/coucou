@@ -1,0 +1,5 @@
+{
+  "title":" - Coucou",
+  "sling:resourceType":"coucou/page/topic",
+  "jcr:primaryType":"nt:unstructured"
+}

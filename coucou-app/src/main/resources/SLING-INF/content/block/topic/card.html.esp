@@ -1,0 +1,8 @@
+<div class="col-sm-2">
+    <div class="card card-block">
+        <a href="/content/coucou/topic.html<%= currentNode %>">
+            <h4 class="card-title"><%= currentNode.title %></h4>
+            <p class="card-text"><%= currentNode.description %></p>
+        </a>
+    </div>
+</div>

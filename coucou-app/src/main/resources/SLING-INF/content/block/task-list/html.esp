@@ -1,4 +1,4 @@
-<a href="/content/coucou/organisations.html"><h3><%= currentNode.title %></h3></a>
+<a href="/content/coucou/tasks.html"><h3><%= currentNode.title %></h3></a>
 <p><%= currentNode.description %></p>
 <div class="row">
 <%
@@ -6,7 +6,7 @@
     var limit = request.requestPathInfo.suffix ? parseInt(request.requestPathInfo.suffix.substring(1)) : Number.MAX_SAFE_INTEGER;
 
     for(var i in currentNode) {
-        if (currentNode[i]['sling:resourceType'] == "coucou/block/org") {
+        if (currentNode[i]['sling:resourceType'] == "coucou/block/task") {
             sling.include(currentNode[i].path + ".html");
 
             if (count >= limit) break;

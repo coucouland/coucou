@@ -4,10 +4,17 @@
   "jcr:primaryType": "nt:unstructured",
   "list": {
     "sling:resourceType": "coucou/block/org-list",
-    "work": {
+    "title": "Organisations",
+    "description": "Recent connections to organisations",
+    "acme": {
       "sling:resourceType": "coucou/block/org",
       "title": "Acme Pty. Ltd.",
       "description": "Importer/exporter"
+    },
+    "phone": {
+      "sling:resourceType": "coucou/block/org",
+      "title": "The Phone Company Pty. Ltd.",
+      "description": "Telephone services"
     }
   }
 }

@@ -1,7 +1,0 @@
-<div class="col-sm-2">
-    <div class="card card-block">
-        <h4 class="card-title"><%= currentNode.title %></h4>
-        <p class="card-text"><%= currentNode.description %></p>
-        <a href="#" class="card-link">Open</a>
-    </div>
-</div>

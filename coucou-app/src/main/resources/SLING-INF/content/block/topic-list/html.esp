@@ -1,13 +1,13 @@
-<h3>Channels</h3>
-<p>Ad-hoc channels of communication</p>
+<a href="/content/coucou/topics.html"><h3><%= currentNode.title %></h3></a>
+<p><%= currentNode.description %></p>
 <div class="row">
 <%
     var count = 0;
     var limit = request.requestPathInfo.suffix ? parseInt(request.requestPathInfo.suffix.substring(1)) : Number.MAX_SAFE_INTEGER;
 
     for(var i in currentNode) {
-        if (currentNode[i]['sling:resourceType'] == "coucou/block/channel") {
-            sling.include(currentNode[i].path + ".html");
+        if (currentNode[i]['sling:resourceType'] == "coucou/block/topic") {
+            sling.include(currentNode[i].path + ".card.html");
 
             if (count >= limit) break;
         }

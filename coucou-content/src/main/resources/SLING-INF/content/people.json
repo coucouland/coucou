@@ -4,7 +4,9 @@
   "jcr:primaryType": "nt:unstructured",
   "list": {
     "sling:resourceType": "coucou/block/person-list",
-    "work": {
+    "title": "People",
+    "description": "Recent connections to individuals",
+    "john-smith": {
       "sling:resourceType": "coucou/block/person",
       "title": "John Smith",
       "description": "Colleague"
