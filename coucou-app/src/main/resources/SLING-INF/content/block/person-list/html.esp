@@ -7,7 +7,7 @@
 
     for(var i in currentNode) {
         if (currentNode[i]['sling:resourceType'] == "coucou/block/person") {
-            sling.include(currentNode[i].path + ".html");
+            sling.include(currentNode[i].path + ".card.html");
 
             if (count >= limit) break;
         }

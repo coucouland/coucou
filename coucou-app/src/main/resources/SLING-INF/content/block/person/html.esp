@@ -4,6 +4,7 @@
             <div class="card-block">
                 <h4 class="card-title"><%= currentNode.title %></h4>
                 <h6 class="card-subtitle text-muted"><%= currentNode.description %></h6>
+                <p><a href="<%= currentNode.email %>" target="_blank">Email</a></p>
             </div>
             <img src="http://lorempixel.com/g/150/100/people" alt="Leonardo Davinci image">
             <div class="card-block">

@@ -9,12 +9,14 @@
     "acme": {
       "sling:resourceType": "coucou/block/org",
       "title": "Acme Pty. Ltd.",
-      "description": "Importer/exporter"
+      "description": "Importer/exporter",
+      "link": "http://acme.example.org"
     },
     "phone": {
       "sling:resourceType": "coucou/block/org",
       "title": "The Phone Company Pty. Ltd.",
-      "description": "Telephone services"
+      "description": "Telephone services",
+      "link": "http://phone.example.org"
     }
   }
 }
