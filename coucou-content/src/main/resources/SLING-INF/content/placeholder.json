@@ -1,0 +1,6 @@
+{
+  "title":"CouCou.Land",
+  "sling:resourceType":"coucou/page/placeholder",
+  "jcr:primaryType":"nt:unstructured",
+  "placeholder-text": "CouCou.Land - Coming soon"
+}

@@ -1,0 +1,31 @@
+<%
+    /* hard-code the content type for index page as it may be accessed without an html extension */
+    response.contentType = "text/html"
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/apps/coucou/favicon.ico">
+
+    <title><%= currentNode.title %></title>
+
+    <!-- Custom styles for this template -->
+    <link href="/apps/coucou/css/style.css" rel="stylesheet">
+
+    <!-- Sling -->
+    <script src="/system/sling.js"></script>
+</head>
+
+<body>
+    <div class="placeholder">
+        <img class="spinner" src="/apps/coucou/images/logo-48.png" alt="Spinning Logo Image"/>
+        <span style="padding: 10px;"><%= currentNode.placeholder_text %></span>
+    </div>
+</body>
+</html>

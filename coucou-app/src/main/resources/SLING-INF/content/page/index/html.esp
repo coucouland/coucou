@@ -43,16 +43,16 @@
 <body>
 <div class="container">
 
-    <% sling.include("header.html/" + currentNode.path); %>
+    <% sling.include("/coucou/header.html/" + currentNode.path); %>
 
-    <% sling.include("topics/list.html"); %>
-    <% sling.include("events/list.html"); %>
-    <% sling.include("tasks/list.html"); %>
-    <% sling.include("people/list.html"); %>
-    <% sling.include("organisations/list.html"); %>
+    <% sling.include("/coucou/topics/list.html"); %>
+    <% sling.include("/coucou/events/list.html"); %>
+    <% sling.include("/coucou/tasks/list.html"); %>
+    <% sling.include("/coucou/people/list.html"); %>
+    <% sling.include("/coucou/organisations/list.html"); %>
 
 </div> <!-- /container -->
 
-<% sling.include("footer.html"); %>
+<% sling.include("/coucou/footer.html"); %>
 </body>
 </html>
