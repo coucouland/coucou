@@ -2,9 +2,9 @@
 
 A social media application focusing on communications and typical groupware functionality.
 
-## Topics
+## Notes
 
-Analagous to email threads, topics are the primary channels of communication between users (and non-users).
+Analagous to email threads, notes are the primary channels of communication between users (and non-users).
 
 ## Events
 
