@@ -1,5 +1,8 @@
 {
   "http": {
+    "coucou.land.80": {
+      "sling:redirect": "http://www.coucou.land/"
+    },
     "cloud.coucou.land.80": {
       "sling:internalRedirect": "/content/coucou/cloud"
     },
