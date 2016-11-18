@@ -1,19 +1,14 @@
-# coucou
+# Coucou
 
-A social media application focusing on communications and typical groupware functionality.
+A communications platform for communities.
 
-## Notes
+## Glossary
 
-Analagous to email threads, notes are the primary channels of communication between users (and non-users).
-
-## Events
-
-Planning and coordinating activities is made easier with events.
-
-## People
-
-Maintain relationships and share information with other users.
-
-## Organisations
-
-Manage customer relationships and publish promotional material.
+ * **Jot** - a topic-based thread, analagous to a forum discussion, a ticket, an event, or anything that typically includes a thread of communication
+ * **Village** - a community of Jotters as configured by a member (e.g. work, family, friends, hobbies, etc.)
+ * **Badge** - awarded to users for activity, by association (i.e. group membership), etc.
+ * **User/Jotter** - an identifiable member
+ * **Group** - a grouping of members
+ * **Mascot** - an avatar/logo assigned to members, groups and villages
+ * **Visibility** - public/private permissions applied to Jots, Villages, Groups
+ * **Foo** - the mascot for Coucou Land
