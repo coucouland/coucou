@@ -44,12 +44,14 @@
 <div class="container">
 
     <% sling.include("/coucou/header.html/" + currentNode.path); %>
-
+<%--
     <% sling.include("/coucou/topics/list.html"); %>
     <% sling.include("/coucou/events/list.html"); %>
     <% sling.include("/coucou/tasks/list.html"); %>
     <% sling.include("/coucou/people/list.html"); %>
     <% sling.include("/coucou/organisations/list.html"); %>
+--%>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z-LzY5SUsKw" frameborder="0" allowfullscreen></iframe>
 
 </div> <!-- /container -->
 
