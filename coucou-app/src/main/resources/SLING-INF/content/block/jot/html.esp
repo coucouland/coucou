@@ -1,0 +1,11 @@
+<h4 class="card-title">Loading..</h4>
+<h6 class="card-subtitle text-muted">Loading..</h6>
+<script>
+var jotId = <%= request.requestPathInfo.suffix ? request.requestPathInfo.suffix.substring(1) : "" %>;
+$(document).ready(function() {
+    $.getJSON("stub/jots.infinity.json", function(data) {
+        $("h4.card-title").html(data.jots[0].title);
+        $("h6.card-subtitle").html(data.jots[0].summary);
+    });
+});
+</script>

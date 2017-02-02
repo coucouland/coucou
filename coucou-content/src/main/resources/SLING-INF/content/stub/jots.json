@@ -1,0 +1,10 @@
+{
+    "jots": {
+        "1": {
+            "uri": "https://coucou.land/j/abcd1234",
+            "title": "A test jot",
+            "summary": "Some sample text as summary"
+            "pubDate": "Thu, 01 Jan 1970 00:00:00 +0000"
+        }
+    }
+}

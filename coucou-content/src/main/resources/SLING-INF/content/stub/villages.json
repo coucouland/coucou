@@ -1,0 +1,9 @@
+{
+    "villages": {
+        "1": {
+            "uri": "https://coucou.land/v/homebase",
+            "name": "Homebase",
+            "description": "A test village"
+        }
+    }
+}

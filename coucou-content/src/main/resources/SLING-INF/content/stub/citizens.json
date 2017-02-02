@@ -1,0 +1,9 @@
+{
+    "citizens": {
+        "1": {
+            "uri": "https://coucou.land/c/zero",
+            "name": "Citizen Zero",
+            "description": "A test citizen"
+        }
+    }
+}
