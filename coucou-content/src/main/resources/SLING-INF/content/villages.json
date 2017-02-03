@@ -1,0 +1,6 @@
+{
+  "title": "Coucou Land | Villages",
+  "sling:resourceType": "coucou/page/village-list",
+  "jcr:primaryType": "nt:unstructured",
+  "uri": "/stub/villages.infinity.json"
+}

@@ -1,0 +1,22 @@
+<DIV class="block-list">
+        <UL class="list-group" id="result_<%= currentNode.name %>">
+            <LI class="list-group-item"><span class="fa fa-spinner fa-pulse"></span> Loading..</LI>
+        </UL>
+    </DIV>
+    </div>
+</div>
+<!-- Enable moment.js for date formatting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script>
+var villagesUrl = <%= request.requestPathInfo.suffix ? request.requestPathInfo.suffix.substring(1) : "" %>;
+$(document).ready(function() {
+    $.getJSON(villagesUrl, function(data) {
+        var villages = [];
+        $.each(data.villages, function(i, val) {
+            villages.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.description.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.name + "</a></li>");
+        });
+        
+        $("ul#result_<%= currentNode.name %>").html(items.join(""));
+    });
+});
+</script>
