@@ -10,7 +10,17 @@ buildscript {
     }
     dependencies {
         classpath 'org.figurate:gradle-bundle-plugin:1.0.1-SNAPSHOT'
+        classpath group: 'pl.allegro.tech.build', name: 'axion-release-plugin', version: '1.3.4'
     }
+}
+
+apply plugin: 'pl.allegro.tech.build.axion-release'
+
+scmVersion {
+    tag {
+        prefix = 'coucou'
+    }
+    versionCreator 'versionWithBranch'
 }
 
 subprojects {
@@ -26,7 +36,7 @@ subprojects {
     tasks.processResources.dependsOn mkClassesDir
 
     bundleInstall {
-        uri = "http://$sling_host:$sling_port/system/console/bundles"
+        uri = "$sling_url/system/console/bundles"
         username = sling_username
         password = sling_password
     }
