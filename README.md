@@ -12,16 +12,18 @@ A communications platform for communities.
  * **Visibility** - public/private permissions applied to Jots, Villages, Groups
  * **Foo** - the mascot for Coucou Land
  * **Badge** - awarded to users for activity, by association (i.e. group membership), etc.
+ * **Council** - a village council consists of trusted citizens that act as moderators for a village
 
 ## Platform Analogies
 
 Coucou lends its concepts and model from a number of different sources, so it may be useful to describe these sources and their analagous counterparts.
 
-| Coucou  | GitHub       | JIRA    | Mailing Lists | Forums | Reddit     | Twitter      | Facebook
-| ------  | ------       | ----    | ------------- | ------ | ------     | -------      | --------
-| Village | Organization | Project | List          | Group  | Sub-reddit | -            | -
-| Jot     | Repository   | Issue   | Thread        | Topic  | Topic      | Conversation | Messages
-| Citizen | Team Member  | User    | Subscriber    | Member | Member     | User         | User
+| Coucou  | GitHub       | JIRA            | Mailing Lists | Forums    | Reddit               | Twitter      | Facebook
+| ------  | ------       | ----            | ------------- | ------    | ------               | -------      | --------
+| Village | Organization | Project         | List          | Group     | Sub-reddit           | -            | -
+| Jot     | Repository   | Issue           | Thread        | Topic     | Topic                | Conversation | Messages
+| Citizen | Team Member  | User            | Subscriber    | Member    | Member               | User         | User
+| Council | Org. Owner   | Project Admin   | List Admin    | Moderator | Sub-reddit moderator | -            | -
 
 
 ## Anatomy of a URL
