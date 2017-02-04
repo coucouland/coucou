@@ -9,10 +9,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <script>
 $(document).ready(function() {
-    $.getJSON(<%= currentNode.url %>, function(data) {
+    $.getJSON('<%= currentNode.uri %>', function(data) {
         var villages = [];
         $.each(data.villages, function(i, val) {
-            villages.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.description.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.name + "</a></li>");
+            villages.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.description + "\" data-html=\"true\" rel=\"tooltip\">" + val.name + "</a></li>");
         });
         
         $("ul#result_<%= currentNode.name %>").html(villages.join(""));

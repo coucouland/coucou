@@ -4,6 +4,6 @@
   "jcr:primaryType": "nt:unstructured",
   "list": {
     "sling:resourceType": "coucou/block/village-list",
-    "uri": "/stub/villages.infinity.json",
+    "uri": "/coucou/stub/villages.infinity.json"
   }
 }
