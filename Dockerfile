@@ -8,6 +8,7 @@ COPY gradlew build.gradle settings.gradle gradle.properties ./
 COPY gradle gradle
 
 COPY coucou-app coucou-app
+COPY coucou-config coucou-config
 COPY coucou-content coucou-content
 
 ENTRYPOINT ["/app/gradlew"]
