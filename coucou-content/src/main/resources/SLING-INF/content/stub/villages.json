@@ -4,6 +4,11 @@
             "uri": "https://coucou.land/v/homebase",
             "name": "Homebase",
             "description": "A test village"
+        },
+        "2": {
+            "uri": "https://coucou.land/v/shp",
+            "name": "Sacred Heart Preston",
+            "description": "Catholic Primary School"
         }
     }
 }

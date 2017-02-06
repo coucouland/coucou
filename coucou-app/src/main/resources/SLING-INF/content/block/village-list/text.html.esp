@@ -12,7 +12,9 @@ $(document).ready(function() {
     $.getJSON(<%= currentNode.url %>, function(data) {
         var villages = [];
         $.each(data.villages, function(i, val) {
-            villages.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.description.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.name + "</a></li>");
+            if (val.uri) {
+                villages.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.description.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.name + "</a></li>");
+            }
         });
         
         $("ul#result_<%= currentNode.name %>").html(villages.join(""));
