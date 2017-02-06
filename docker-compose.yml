@@ -2,25 +2,25 @@ coucou:
   build: .
   links:
     - sling
-  command: build deployBundle startBundle
+  command: build bundleInstall
   volumes_from:
     - coucou-gradle-cache
-coucou-api:
-  build: coucou-api
-  volumes_from:
-    - coucou-api-gradle-cache
+#coucou-api:
+#  build: coucou-api
+#  volumes_from:
+#    - coucou-api-gradle-cache
 whistlepost:
   image: micronode/whistlepost
   links:
     - sling
-  command: build deployBundle startBundle
+  command: build bundleInstall
   volumes_from:
     - whistlepost-gradle-cache
 sling:
   image: apachesling/sling
   mem_limit: 512m
-  links:
-    - "coucou-api:api"
+#  links:
+#    - "coucou-api:api"
   volumes:
     - "./sling.properties:/opt/sling/sling.properties"
   volumes_from:

@@ -9,7 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 <script>
 $(document).ready(function() {
-    $.getJSON(<%= currentNode.url %>, function(data) {
+    $.getJSON('<%= currentNode.uri %>', function(data) {
         var villages = [];
         $.each(data.villages, function(i, val) {
             if (val.uri) {
