@@ -19,6 +19,9 @@
 </nav>
 
 <div class="page-header">
-<h1><%= page.adaptTo(javax.jcr.Node).title %></h1>
-<p class="lead"><%= page.adaptTo(javax.jcr.Node).description %></p>
+    <h1>
+        <img class="spinner" src="/apps/coucou/images/logo-48.png" alt="Spinning Logo Image"/>
+        <%= page.adaptTo(javax.jcr.Node).title %>
+    </h1>
+    <p class="lead"><%= page.adaptTo(javax.jcr.Node).description %></p>
 </div>
