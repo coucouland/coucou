@@ -1,0 +1,23 @@
+<DIV class="block-list">
+        <UL class="list-group" id="result_<%= currentNode.name %>">
+            <LI class="list-group-item"><span class="fa fa-spinner fa-pulse"></span> Loading..</LI>
+        </UL>
+    </DIV>
+    </div>
+</div>
+<!-- Enable moment.js for date formatting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<script>
+$(document).ready(function() {
+    $.getJSON('<%= currentNode.uri %>', function(data) {
+        var jots = [];
+        $.each(data.jots, function(i, val) {
+            if (val.uri) {
+                jots.push("<li class=\"list-group-item\"><a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")</li>");
+            }
+        });
+        
+        $("ul#result_<%= currentNode.name %>").html(jots.join(""));
+    });
+});
+</script>

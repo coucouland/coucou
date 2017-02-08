@@ -1,0 +1,9 @@
+{
+  "title": "Coucou Land | Jots",
+  "sling:resourceType": "coucou/page/jots",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/jot-list",
+    "uri": "/stub/jots.infinity.json"
+  }
+}
