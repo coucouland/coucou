@@ -1,5 +1,5 @@
 {
-  "title":"Coucou",
+  "title":"Coucouland",
   "sling:resourceType":"coucou/header",
   "jcr:primaryType":"nt:unstructured"
 }

@@ -1,7 +1,7 @@
 {
-  "title":"Coucou land",
+  "title":"Coucouland",
   "description": "A communications platform",
   "sling:resourceType":"coucou/page/index",
   "jcr:primaryType":"nt:unstructured",
-  "placeholder_text": "Coucou land - Coming soon"
+  "placeholder_text": "Coucouland - Coming soon"
 }
