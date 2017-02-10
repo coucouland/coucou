@@ -4,18 +4,23 @@ body {
     font-size: 1.6em;
 }
 
-nav.navbar{
+.navbar{
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
 
-nav.navbar.shrink {
+.shrink {
   min-height: 35px;
 }
 
+nav .container {
+    min-height: inherit;
+}
+
 .container > .coucou-navbar-header {
+    min-height: inherit;
     background-image: url("../images/logo-48.png");
-    background-size: 46px 48px;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     margin-left: -10px;
 }
