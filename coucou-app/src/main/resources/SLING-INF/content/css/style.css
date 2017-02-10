@@ -1,3 +1,22 @@
+nav.navbar{
+   -webkit-transition: all 0.4s ease;
+   transition: all 0.4s ease;
+}
+
+nav.navbar.shrink {
+  min-height: 35px;
+}
+
+.container > .coucou-navbar-header {
+    background-image: url("../images/logo-48.png");
+    background-size: 46px 48px;
+    background-repeat: no-repeat;
+    margin-left: -10px;
+}
+
+.coucou-navbar-brand {
+    padding-left: 67px;
+}
 
 footer {
     text-align: center;
