@@ -14,7 +14,7 @@ $(document).ready(function() {
         $.each(data.jots, function(i, val) {
             if (val.uri) {
                 var jot = "<a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")";
-                if (jot.village) {
+                if (val.village) {
                     jot += " <a href=\"/v/" + jot.village + "\">" + jot.village + "</a>";
                 }
                 jots.push("<li class=\"list-group-item\">" + jot + "</li>");
