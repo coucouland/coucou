@@ -13,7 +13,7 @@
     </div>
   </div>
 </nav>
-
+<!--
 <div class="page-header">
     <h1>
         <img class="spinner" src="/apps/coucou/images/logo-48.png" alt="Spinning Logo Image"/>
@@ -21,3 +21,4 @@
     </h1>
     <p class="lead"><%= page.adaptTo(javax.jcr.Node).description %></p>
 </div>
+-->
