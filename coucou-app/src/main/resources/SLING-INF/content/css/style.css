@@ -4,7 +4,8 @@ body {
     font-size: 1.6em;
 }
 
-.navbar{
+.navbar {
+   min-height: 48px;
    -webkit-transition: all 0.4s ease;
    transition: all 0.4s ease;
 }
