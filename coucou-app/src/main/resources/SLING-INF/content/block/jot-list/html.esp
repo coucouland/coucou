@@ -13,11 +13,12 @@ $(document).ready(function() {
         var jots = [];
         $.each(data.jots, function(i, val) {
             if (val.uri) {
-            var jot = "<a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")";
-            if (jot.village) {
-                jot += " <a href=\"/v/" + jot.village + "\">" + jot.village + "</a>";
+                var jot = "<a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")";
+                if (jot.village) {
+                    jot += " <a href=\"/v/" + jot.village + "\">" + jot.village + "</a>";
+                }
+                jots.push("<li class=\"list-group-item\">" + jot + "</li>");
             }
-            jots.push("<li class=\"list-group-item\">" + jot + "</li>");
         });
         
         $("ul#result_<%= currentNode.name %>").html(jots.join(""));
