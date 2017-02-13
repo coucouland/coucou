@@ -29,7 +29,7 @@ $(document).ready(function() {
             }*/
         });
             
-        ReactDOM.render(jots, document.getElementById('result_<%= currentNode.name %>'));
+        ReactDOM.render(<div>{jots}</div>, document.getElementById('result_<%= currentNode.name %>'));
         /* $("div#result_<%= currentNode.name %>").html(jots.join("")); */
     });
 });
