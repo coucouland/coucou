@@ -8,7 +8,7 @@ function Jot(props) {
             <p className="card-text">{props.summary}</p>
         </div>
         <div className="card-footer">
-            <small class="text-muted">Last updated {moment(props.pubDate).fromNow()}</small>
+            <small className="text-muted">Last updated {moment(props.pubDate).fromNow()}</small>
         </div>
     </div>;
 }
