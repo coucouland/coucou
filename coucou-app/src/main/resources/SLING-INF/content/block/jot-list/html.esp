@@ -17,7 +17,7 @@ $(document).ready(function() {
     $.getJSON('<%= currentNode.uri %>', function(data) {
         var jots = [];
         $.each(data.jots, function(i, val) {
-            jots.push(<Jot className="card" title="{val.title}" />);
+            jots.push(<Jot className="card" title="{{val.title}}" summary="{{val.summary}}" village="{{val.village}}"/>);
                 
             /*
             if (val.uri) {

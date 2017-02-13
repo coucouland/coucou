@@ -9,7 +9,7 @@ function Jot(props) {
             </div>
             <img src="http://lorempixel.com/g/150/100/business" alt="Sample image"/>
             <div class="card-block">
-                <p class="card-text">Example text</p>
+                <p class="card-text">{props.village}</p>
             </div>
         </a>
     </div>;
