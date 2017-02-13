@@ -1,5 +1,5 @@
 <DIV class="row">
-        <div class="col-sm-2" id="result_<%= currentNode.name %>">
+        <div class="card-columns" id="result_<%= currentNode.name %>">
             <div class="card"><span class="fa fa-spinner fa-pulse"></span> Loading..</div>
         </div>
         <!--
