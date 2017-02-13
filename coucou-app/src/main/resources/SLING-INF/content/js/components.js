@@ -3,11 +3,12 @@
 function Jot(props) {
     return <div className="card">
         <div className="card-block">
-            <h4 className="card-title">{props.title} {moment(props.pubDate).fromNow()}</h4>
-            <h6 className="card-subtitle text-muted">{props.summary}</h6>
+            <h4 className="card-title">{props.title}</h4>
+            <h6 className="card-subtitle text-muted">{props.village}</h6>
+            <p className="card-text">{props.summary}</p>
         </div>
-        <div className="card-block">
-            <p className="card-text">{props.village}</p>
+        <div className="card-footer">
+            <small class="text-muted">Last updated {moment(props.pubDate).fromNow()}</small>
         </div>
     </div>;
 }
