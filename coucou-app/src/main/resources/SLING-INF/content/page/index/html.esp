@@ -41,10 +41,13 @@
 
     <SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></SCRIPT>
     
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
     <!-- reactjs -->
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-    <script src="/apps/coucou/js/components.js"></script>
+    <script src="/apps/coucou/js/components.js" type="text/babel"></script>
 </head>
 
 <body>
