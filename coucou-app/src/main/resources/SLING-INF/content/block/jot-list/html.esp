@@ -1,6 +1,6 @@
 <DIV class="row">
         <div class="col-sm-2" id="result_<%= currentNode.name %>">
-            <span class="fa fa-spinner fa-pulse"></span> Loading..
+            <div class="card"><span class="fa fa-spinner fa-pulse"></span> Loading..</div>
         </div>
         <!--
         <UL class="list-group" id="result_<%= currentNode.name %>">
@@ -26,7 +26,7 @@ $(document).ready(function() {
             }
         });
         
-        $("ul#result_<%= currentNode.name %>").html(jots.join(""));
+        $("div#result_<%= currentNode.name %>").html(jots.join(""));
     });
 });
 </script>
