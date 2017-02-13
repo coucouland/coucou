@@ -17,16 +17,18 @@ $(document).ready(function() {
     $.getJSON('<%= currentNode.uri %>', function(data) {
         var jots = [];
         $.each(data.jots, function(i, val) {
+            ReactDOM.render(<Jot title="val.title" />, document.getElementById('result_<%= currentNode.name %>'));
+            /*
             if (val.uri) {
                 var jot = "<a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")";
                 if (val.village) {
                     jot += " <a href=\"/v/" + val.village + "\">" + val.village + "</a>";
                 }
                 jots.push("<div class=\"card\">" + jot + "</div>");
-            }
+            }*/
         });
         
-        $("div#result_<%= currentNode.name %>").html(jots.join(""));
+        /* $("div#result_<%= currentNode.name %>").html(jots.join("")); */
     });
 });
 </script>
