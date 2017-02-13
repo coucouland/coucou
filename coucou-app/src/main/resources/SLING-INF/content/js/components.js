@@ -1,7 +1,7 @@
 /* ReactJS components.. */
 
 function Jot(props) {
-    return <div>
+    return <div className="card">
         <a href="/content/coucou/j/{props.jot_id}">
             <div class="card-block">
                 <h4 class="card-title">{props.title}</h4>

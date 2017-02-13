@@ -18,7 +18,7 @@ $(document).ready(function() {
         var jots = [];
         $.each(data.jots, function(i, val) {
             if (val.uri) {
-                jots.push(<Jot key={val.uri} className="card" title={val.title} summary={val.summary} village={val.village} />);
+                jots.push(<Jot key={val.uri} title={val.title} summary={val.summary} village={val.village} />);
                 
                 /*
                 var jot = "<a href=\"" + val.uri + "\" title=\"" + val.summary.split('"').join('&quot;') + "\" data-html=\"true\" rel=\"tooltip\">" + val.title + "</a> (" + moment(val.pubDate).fromNow() + ")";
