@@ -1,7 +1,12 @@
-<DIV class="block-list">
+<DIV class="row">
+        <div class="col-sm-2" id="result_<%= currentNode.name %>">
+            <span class="fa fa-spinner fa-pulse"></span> Loading..
+        </div>
+        <!--
         <UL class="list-group" id="result_<%= currentNode.name %>">
             <LI class="list-group-item"><span class="fa fa-spinner fa-pulse"></span> Loading..</LI>
         </UL>
+        -->
     </DIV>
     </div>
 </div>
@@ -17,7 +22,7 @@ $(document).ready(function() {
                 if (val.village) {
                     jot += " <a href=\"/v/" + val.village + "\">" + val.village + "</a>";
                 }
-                jots.push("<li class=\"list-group-item\">" + jot + "</li>");
+                jots.push("<div class=\"card\">" + jot + "</div>");
             }
         });
         
