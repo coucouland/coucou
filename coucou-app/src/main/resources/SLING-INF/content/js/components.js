@@ -12,3 +12,15 @@ function Jot(props) {
         </div>
     </div>;
 }
+
+function JotSansTitle(props) {
+    return <div className="card">
+        <div className="card-block">
+            <p className="card-text">{props.summary}</p>
+            <p className="card-text"><small className="text-muted">Last updated {moment(props.pubDate).fromNow()}</small></p>
+        </div>
+        <div className="card-footer">
+            {props.village}
+        </div>
+    </div>;
+}
