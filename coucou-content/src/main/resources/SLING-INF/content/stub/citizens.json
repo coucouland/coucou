@@ -1,9 +1,11 @@
 {
     "citizens": {
-        "1": {
+        "0": {
             "uri": "https://coucou.land/c/zero",
             "name": "Citizen Zero",
-            "description": "A test citizen"
+            "description": "A test citizen",
+            "created": "Thu, 01 Jan 1970 00:00:00 +0000",
+            "villages": ["homebase", "pop_culture"]
         }
     }
 }

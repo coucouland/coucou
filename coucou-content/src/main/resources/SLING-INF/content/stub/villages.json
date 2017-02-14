@@ -1,14 +1,22 @@
 {
     "villages": {
-        "1": {
+        "homebase": {
             "uri": "https://coucou.land/v/homebase",
             "name": "Homebase",
-            "description": "A test village"
+            "description": "A test village",
+            "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
         },
-        "2": {
+        "shp": {
             "uri": "https://coucou.land/v/shp",
             "name": "Sacred Heart Preston",
-            "description": "Catholic Primary School"
+            "description": "Catholic Primary School",
+            "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
+        },
+        "pop_culture": {
+            "uri": "https://coucou.land/v/pop_culture",
+            "name": "Pop Culture",
+            "description": "Cult of obsession",
+            "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
         }
     }
 }
