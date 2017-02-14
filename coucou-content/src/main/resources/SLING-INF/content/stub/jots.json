@@ -12,6 +12,19 @@
             "summary": "The Lego Movie",
             "pubDate": "Wed, 08 Feb 2017 00:00:00 +0000",
             "village": "pop_culture"
+        },
+        "3": {
+            "uri": "https://coucou.land/j/1234",
+            "title": "The Four Ps",
+            "summary": "People, process, patterns, purpose",
+            "pubDate": "Tue, 14 Feb 2017 00:00:00 +0000",
+            "village": "entrepeneurs"
+        },
+        "4": {
+            "uri": "https://coucou.land/j/12345",
+            "summary": "If it don't make money, it don't make sense.",
+            "pubDate": "Tue, 14 Feb 2017 00:00:00 +0000",
+            "village": "philosophy"
         }
     }
 }
