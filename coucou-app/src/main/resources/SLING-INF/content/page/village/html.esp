@@ -53,7 +53,7 @@
     
     <% 
         var suffix = request.requestPathInfo.suffix ? request.requestPathInfo.suffix : "";
-        sling.include(currentNode, "coucou/block/village");
+        sling.include(currentNode.path, "coucou/block/village");
     %>
     
     <!-- jots specific to village -->
