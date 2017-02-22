@@ -6,6 +6,13 @@
             "description": "A test citizen",
             "created": "Thu, 01 Jan 1970 00:00:00 +0000",
             "villages": ["homebase", "pop_culture"]
+        },
+        "1": {
+            "uri": "https://coucou.land/c/foo",
+            "name": "Citizen Foo",
+            "description": "Hello Foo!",
+            "created": "Thu, 01 Jan 1970 00:00:00 +0000",
+            "villages": ["pop_culture"]
         }
     }
 }

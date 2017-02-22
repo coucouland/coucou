@@ -25,6 +25,13 @@
             "summary": "If it don't make money, it don't make sense.",
             "pubDate": "Tue, 14 Feb 2017 00:00:00 +0000",
             "village": "philosophy"
+        },
+        "5": {
+            "uri": "https://coucou.land/j/12345",
+            "summary": "Hello World.",
+            "pubDate": "Tue, 22 Feb 2017 00:00:00 +0000",
+            "village": "welcome",
+            "creator": "foo"
         }
     }
 }

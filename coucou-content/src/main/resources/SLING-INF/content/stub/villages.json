@@ -17,6 +17,12 @@
             "name": "Pop Culture",
             "description": "Cult of obsession",
             "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
+        },
+        "welcome": {
+            "uri": "https://coucou.land/v/welcome",
+            "name": "Welcome Village",
+            "description": "A place to get familiar with Coucouland",
+            "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
         }
     }
 }

@@ -1,0 +1,6 @@
+{
+  "title": "Coucou Land | Village",
+  "sling:resourceType": "coucou/page/village",
+  "jcr:primaryType": "nt:unstructured",
+  "motd": "https://api.github.com/zen"
+}
