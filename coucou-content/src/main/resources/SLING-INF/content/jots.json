@@ -4,6 +4,6 @@
   "jcr:primaryType": "nt:unstructured",
   "list": {
     "sling:resourceType": "coucou/block/jot-list",
-    "uri": "/stub/jots.infinity.json"
+    "uri": "/coucou/stub/jots.infinity.json"
   }
 }
