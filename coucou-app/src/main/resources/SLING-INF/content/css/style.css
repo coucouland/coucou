@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    /*padding-top: 70px;*/
     padding-bottom: 20px;
     /*font-size: 1.6em;*/
 }
@@ -41,7 +41,7 @@ nav .container {
 }
 
 .coucou-navbar-brand {
-    padding-left: 67px;
+    /* padding-left: 67px; */
 }
 
 footer {
