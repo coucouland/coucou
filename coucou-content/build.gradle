@@ -1,6 +1,13 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+  filter ReplaceTokens, tokens: [
+      "api_jot_url": project.property('api_jot_url')
+  ]
+}
+
 jar {
   manifest {
     instruction 'Sling-Initial-Content', 'SLING-INF/content;path:=/content/coucou;overwrite:=true'
   }
 }
-
