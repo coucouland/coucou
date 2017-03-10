@@ -1,9 +1,6 @@
-import org.apache.tools.ant.filters.ReplaceTokens
-
 processResources {
-  filter ReplaceTokens, tokens: [
-      "api_jot_url": api_jot_url
-  ]
+  outputs.upToDateWhen { false }
+  expand api_jot_url: api_jot_url
 }
 
 jar {

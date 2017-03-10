@@ -4,6 +4,6 @@
   "jcr:primaryType": "nt:unstructured",
   "list": {
     "sling:resourceType": "coucou/block/jot-list",
-    "uri": "@api_jot_url@"
+    "uri": "$api_jot_url"
   }
 }
