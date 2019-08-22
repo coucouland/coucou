@@ -1,0 +1,16 @@
+{
+  "title": "Trophies - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/award-list",
+    "title": "Trophies",
+    "description": "Achievements for being a good coucou land citizen",
+    "helper": {
+      "sling:resourceType": "coucou/block/award",
+      "title": "Good Helper",
+      "description": "Awarded for being a good helper to others",
+      "points-required": 150
+    }
+  }
+}

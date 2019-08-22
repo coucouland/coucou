@@ -1,0 +1,3 @@
+Sling-Initial-Content: SLING-INF/content;overwrite:=false
+Bundle-Name: coucou-config
+Bundle-SymbolicName: org.mnode.coucou-config

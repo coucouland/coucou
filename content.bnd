@@ -1,0 +1,3 @@
+Sling-Initial-Content: SLING-INF/content;path:=/content/coucou;overwrite:=true
+Bundle-Name: coucou-content
+Bundle-SymbolicName: org.mnode.coucou-content

@@ -1,0 +1,3 @@
+Sling-Initial-Content: SLING-INF/content;path:=/apps/coucou;overwrite:=true
+Bundle-Name: coucou-app
+Bundle-SymbolicName: org.mnode.coucou-app

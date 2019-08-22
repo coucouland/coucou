@@ -1,0 +1,22 @@
+{
+  "title": "Rewards - Coucou",
+  "sling:resourceType": "coucou/page/list",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/reward-list",
+    "title": "Rewards",
+    "description": "Rewards for being a good coucou land citizen",
+    "avatar-selected": {
+      "sling:resourceType": "coucou/block/reward",
+      "title": "Avatar selected",
+      "description": "Awarded for choosing an Avatar",
+      "points-awarded": 25
+    },
+    "job-added": {
+      "sling:resourceType": "coucou/block/reward",
+      "title": "Job added",
+      "description": "Awarded for adding a new Job",
+      "points-awarded": 20
+    }
+  }
+}

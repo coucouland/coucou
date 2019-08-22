@@ -18,6 +18,12 @@
             "description": "Cult of obsession",
             "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
         },
+        "gardening": {
+            "uri": "https://coucou.land/v/gardening",
+            "name": "Gardening",
+            "description": "Getting back to nature",
+            "lastModified": "Thu, 01 Jan 1970 00:00:00 +0000"
+        },
         "welcome": {
             "uri": "https://coucou.land/v/welcome",
             "name": "Welcome Village",
