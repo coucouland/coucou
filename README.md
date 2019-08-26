@@ -1,6 +1,44 @@
-# Coucou
+# Coucou - A collaboration platform for communities.
 
-A communications platform for communities.
+[Introduction]: #introduction
+
+[Features]: #features
+
+[Getting started]: #getting-started
+[Requirements]: #requirements
+[Configuring]: #configuring
+
+
+[Examples]: #examples
+
+[Development]: #development
+
+[Contributing]: #contributing
+
+#### Table of Contents
+
+1. [Introduction - What is Coucou?][Introduction]
+
+## Introduction
+
+Coucou is a social media platform that is focused on group-based sharing of content and discussions.
+
+Connections between users only exist in the context of a group (village), such that all interactions are contextual and focused.
+
+A village may be closed (private) such that only members (citizens) can see and participate in the shared content, or they may
+be open (public) in that all users can view the content and (optionally) request membership.
+
+Village membership is granted by invitation only, however public villages may provide the option to request membership.
+
+All content shared by citizens remains under the control of the citizen and may be unshared at any time. If a citizen leaves or
+is removed from a village all their shared content will be removed from the village. The only content not removed are any conversations resulting from shared content.
+
+Conversations are discussions in the context of a village based on a topic or shared content. Conversations serve the function
+of both comments on shared content and group chat.
+
+A user may be a citizen of multiple villages in which they may collaborate and communicate with other citizens. Each village profile (citizenship) allows customisation of visible attributes such as avatar (mascot), pseudonym, etc. When a citizen posts or uploads content to a village it is stored in a dedicated user space to allow for user-controlled access management (e.g. unsharing, etc.).
+
+
 
 ## Glossary
 
