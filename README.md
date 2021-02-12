@@ -1,4 +1,6 @@
-# Coucou - a collaboration platform for communities
+# Coucou! Let's Collaborate
+
+![Coucou! Let's Collaborate](coucou,_let's_collaborate.png)
 
 [Introduction]: #introduction
 
@@ -21,26 +23,32 @@
 
 ## Introduction
 
-Coucou is an Open Source micro-blogging platform that is focused on moderated sharing of content and discussions.
+Coucou is an Open Source group collaboration platform that is focused on moderated sharing of content and discussions.
 
-Jots are posts that may be links to content, files or text-based notes. A Jot may contain up to five hashtags to indicate the preferred Villages where the Jot is published.
+Jots are posts that may be links to content, files or text-based notes.
 
-Villages are moderated groups maintained by a Village Council. The Council is responsible for managing Village membership and approving Jots associated with a Village.
+Villages are moderated groups maintained by a Village Council. The Council is responsible for managing Village 
+membership and moderating content associated with a Village.
 
-A Conversation is a comment channel associated with a Jot in the context of a Village. Only Village members may comment, and Conversations are only available when a Jot is approved for publication in a Village.
+A Conversation is a comment channel associated with a Jot in the context of a Village. Only Village members may
+comment, and Conversations are only available when a Jot is approved for publication in a Village.
 
-A village may be closed (private) such that only members (citizens) can see and participate in the shared content, or they may
-be open (public) in that all users can view the content and (optionally) request membership.
+A village may be closed (private) such that only members (citizens) can see and participate in the shared content,
+or they may be open (public) in that all users can view the content and (optionally) request membership.
 
 Village membership is granted by invitation only, however public villages may provide the option to request membership.
 
-All content shared by citizens remains under the control of the citizen and may be unshared at any time. If a citizen leaves or
-is removed from a village all their shared content will be removed from the village. The only content not removed are any conversations resulting from shared content.
+All content shared by citizens remains under the control of the citizen and may be unshared at any time. If a citizen
+leaves or is removed from a village all their shared content will be removed from the village. The only content not
+removed are any conversations resulting from shared content.
 
-Conversations are discussions in the context of a village based on a topic or shared content. Conversations serve the function
-of both comments on shared content and group chat.
+Conversations are discussions in the context of a village based on a topic or shared content. Conversations serve the 
+function of both comments on shared content and group chat.
 
-A user may be a citizen of multiple villages in which they may collaborate and communicate with other citizens. Each village profile (citizenship) allows customisation of visible attributes such as avatar (mascot), pseudonym, etc. When a citizen posts or uploads content to a village it is stored in a dedicated user space to allow for user-controlled access management (e.g. unsharing, etc.).
+A user may be a citizen of multiple villages in which they may collaborate and communicate with other citizens. Each
+village profile (citizenship) allows customisation of visible attributes such as avatar (mascot), pseudonym, etc.
+When a citizen posts or uploads content to a village it is stored in a dedicated user space to allow for 
+user-controlled access management (e.g. unsharing, etc.).
 
 
 
@@ -70,18 +78,19 @@ Coucou lends its concepts and model from a number of different sources, so it ma
 
 ## Anatomy of a URL
 
-A coucou URL is primarily a pointer to a resource, be it a Jot, Citizen, Village, etc. A resource is identified by a unique hash and a resource type:
+A coucou URL is primarily a pointer to a resource, be it a Jot, Citizen, Village, etc. A resource is identified by
+a unique UID and a resource type:
 
-    http://coucou.land/jot/20ea15fb4a4715222f7cf635247ef0e8
+    https://coucou.im/jot/20ea15fb4a4715222f7cf635247ef0e8
     
-    http://coucou.land/citizen/801c07d82d0bce07de9c57fedd87a46f
+    https://coucou.im/citizen/801c07d82d0bce07de9c57fedd87a46f
     
-    http://coucou.land/village/813f8ce580f276558ce9e5093468b1ab
+    https://coucou.im/village/813f8ce580f276558ce9e5093468b1ab
 
 A URL may be further decorated for ease of categorisation/recognition by humans:
 
-    http://coucou.land/fortuna/jot/20ea15fb4a4715222f7cf635247ef0e8
+    https://coucou.im/fortuna/jot/example-jot
     
-    http://coucou.land/australian/citizen/801c07d82d0bce07de9c57fedd87a46f
+    https://coucou.im/citizen/johnd
     
-    http://coucou.land/technology/village/813f8ce580f276558ce9e5093468b1ab
+    https://coucou.im/village/carrot-village
