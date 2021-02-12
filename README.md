@@ -1,4 +1,4 @@
-# Coucou - A collaboration platform for communities.
+# Coucou - a collaboration platform for communities
 
 [Introduction]: #introduction
 
@@ -21,9 +21,13 @@
 
 ## Introduction
 
-Coucou is a social media platform that is focused on group-based sharing of content and discussions.
+Coucou is an Open Source micro-blogging platform that is focused on moderated sharing of content and discussions.
 
-Connections between users only exist in the context of a group (village), such that all interactions are contextual and focused.
+Jots are posts that may be links to content, files or text-based notes. A Jot may contain up to five hashtags to indicate the preferred Villages where the Jot is published.
+
+Villages are moderated groups maintained by a Village Council. The Council is responsible for managing Village membership and approving Jots associated with a Village.
+
+A Conversation is a comment channel associated with a Jot in the context of a Village. Only Village members may comment, and Conversations are only available when a Jot is approved for publication in a Village.
 
 A village may be closed (private) such that only members (citizens) can see and participate in the shared content, or they may
 be open (public) in that all users can view the content and (optionally) request membership.
