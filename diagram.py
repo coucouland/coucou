@@ -16,9 +16,11 @@ with Diagram("Coucou, Let's Collaborate", show=False, direction="TB"):
     journal = APIGateway("calendar journal")
     availability = APIGateway("calendar availability")
     subscribers = APIGateway("subscriber list")
+    resources = APIGateway("resource list")
     userprofile = APIGateway("user profiles")
 
     userprofile >> cocuou >> userprofile
+    resources >> cocuou >> resources
     events >> cocuou >> events
     tasks >> cocuou >> tasks
     journal >> cocuou >> journal
@@ -28,7 +30,7 @@ with Diagram("Coucou, Let's Collaborate", show=False, direction="TB"):
     topic = SNS("calendar topic")
     cua = Lambda("calendar user agent")
 
-    [userprofile, subscribers] >> cua
+    [userprofile, resources, subscribers] >> cua
     [events, tasks, journal, availability] >> topic >> cua >> topic
 
     ses = SES("simple email service")
