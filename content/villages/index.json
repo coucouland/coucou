@@ -1,0 +1,9 @@
+{
+  "title": "Coucou | Villages",
+  "sling:resourceType": "coucou/page/villages",
+  "jcr:primaryType": "nt:unstructured",
+  "list": {
+    "sling:resourceType": "coucou/block/village-list",
+    "uri": "/stub/villages.infinity.json"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "title":"Coucou | Villages",
+  "sling:resourceType":"coucou/page/village-list",
+  "sling:alias":"current",
+  "sling:vanityPath":"/villages",
+  "jcr:primaryType":"nt:unstructured"
+}

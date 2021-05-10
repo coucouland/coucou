@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<nav data-th-fragment="navbar" class="navbar-fixed" id="coucou-top-nav">
+    <div class="nav-wrapper blue-grey darken-3">
+        <a href="#!" class="brand-logo grey-text text-darken-2">
+            <img src="/assets/coucou/images/masthead.png" style="height: 40px; margin: 10px">
+        </a>
+        <form target="content" action="/content/coucou/villages.html">
+            <div class="input-field right hide-on-med-and-down">
+                <input id="q" type="search" required>
+                <label class="label-icon" for="q"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<aside data-th-fragment="sidenav">
+    <div id="sidenav">
+        <div class="collection with-header">
+            <div class="collection-header">Home</div>
+            <!--            <a href="/content/coucou/home.html" target="content" class="collection-item tooltipped active" data-tooltip="Default view">Home</a>-->
+            <a href="/content/coucou/jots.html" target="content" class="collection-item tooltipped" data-tooltip="Published content">Jots</a>
+            <a href="/content/coucou/villages.html" target="content" class="collection-item tooltipped" data-tooltip="Interest groups">Villages</a>
+            <a href="/content/coucou/conversations.html" target="content" class="collection-item tooltipped" data-tooltip="Moderated discussion">Conversations</a>
+        </div>
+
+        <div class="collection with-header">
+            <div class="collection-header">Journal</div>
+            <a href="/content/coucou/journal.html" target="content" class="collection-item tooltipped" data-tooltip="Your published content">Journal</a>
+            <!--        <a href="/content/coucou/planner.html" target="content" class="collection-item tooltipped" data-tooltip="Future events">Planner</a>-->
+            <a href="/content/coucou/files.html" target="content" class="collection-item tooltipped" data-tooltip="Your shared content">Files</a>
+        </div>
+
+        <div class="collection with-header">
+            <div class="collection-header">Preferences</div>
+            <a href="/content/coucou/settings.html" target="content" class="collection-item tooltipped" data-tooltip="Personalise Coucou">Settings</a>
+            <a href="/content/coucou/help.html" target="content" class="collection-item tooltipped" data-tooltip="Learn more">Help &amp; Feedback</a>
+        </div>
+    </div>
+</aside>
+</body>
+</html>

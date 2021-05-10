@@ -1,0 +1,39 @@
+---
+name: Village
+superclasses: [ V ]
+properties:
+  - name: name
+    mandatory: true
+
+---
+name: User
+superclasses: [ V ]
+properties:
+  - name: name
+    mandatory: true
+
+---
+name: Conversation
+superclasses: [ V ]
+properties:
+  - name: topic
+    mandatory: true
+
+---
+name: Comment
+superclasses: [ V ]
+properties:
+  - name: text
+    mandatory: true
+
+---
+name: AuthoredBy
+superclasses: [ E ]
+
+---
+name: CitizenOf
+superclasses: [ E ]
+
+---
+name: BelongsTo
+superclasses: [ E ]

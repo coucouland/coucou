@@ -1,0 +1,19 @@
+{
+  "sling:match": ".+.coucou.im.80",
+  "sling:internalRedirect": "/content/coucou",
+  "apps": {
+    "sling:internalRedirect": "/apps"
+  },
+  "libs": {
+    "sling:internalRedirect": "/libs"
+  },
+  "assets": {
+    "sling:internalRedirect": "/assets"
+  },
+  "system": {
+    "sling:internalRedirect": "/system"
+  },
+  "wp": {
+    "sling:internalRedirect": "/content/wp"
+  }
+}

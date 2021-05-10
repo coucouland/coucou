@@ -1,0 +1,9 @@
+{
+  "sling:resourceType": "coucou/page/village",
+  "title": "elbento.com",
+  "description": "Ben Fortuna's personal space on the Internet",
+  "logo": "some-image.png",
+  "layout": {
+
+  }
+}

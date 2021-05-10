@@ -50,6 +50,31 @@ village profile (citizenship) allows customisation of visible attributes such as
 When a citizen posts or uploads content to a village it is stored in a dedicated user space to allow for 
 user-controlled access management (e.g. unsharing, etc.).
 
+### User Interface
+
+The Coucou application provides two alternating views: the planner view shows future events and tasks, whilst the
+historical view shows past event, tasks and journal entries. Switching between views is done via tabs underneath
+the page header navigation.
+
+#### Navigation
+
+The homepage will show a combined feed of all subscribed Village content for the default range. Navigation is
+managed via Village selection controls, and a search function provided in the page header. A profile switcher is
+also provided in the top right of the header.
+
+#### Context Bar
+
+At the top of the right sidebar contextual information about the selected Village or Jot is displayed. This may
+include welcome messages, population statistics, a topic cloud and related Jots and Villages.
+
+#### Filtering
+
+Content filtering is supported via sidebar controls including date range, topics, villages, content type, etc. The
+default content filters for views are as follows:
+
+* Planner view: range=month, topics=all, villages=all, type=events,tasks
+* Historical view: range=week, topics=all, villages=all, type=journal
+
 
 
 ## Glossary

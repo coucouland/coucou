@@ -1,0 +1,21 @@
+{
+  "title":"Coucou village stub",
+  "description": "Communities that form around common interests.",
+  "sling:resourceType":"coucou/api/village",
+  "jcr:primaryType":"nt:unstructured",
+  "villages": {
+    "count": 2,
+    "list": {
+      "1": {
+        "id": 1,
+        "url": "http://coucou.im/village.html?id=global",
+        "title": "Global"
+      },
+      "2": {
+        "id": 2,
+        "url": "http://test2.example.com",
+        "title": "test 2"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title":"Coucou journal stub",
+  "description": "Text and media file management",
+  "sling:resourceType":"coucou/api/journal",
+  "jcr:primaryType":"nt:unstructured",
+  "entries": {
+    "count": 2,
+    "list": {
+      "1": {
+        "id": 1,
+        "url": "http://coucou.im/journal.html?id=default",
+        "title": "Hello Fou"
+      },
+      "2": {
+        "id": 2,
+        "url": "http://test2.example.com",
+        "title": "test 2"
+      }
+    }
+  }
+}

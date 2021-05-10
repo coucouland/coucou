@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" data-th-with="page=${request.adaptTo(@org.mnode.whistlepost.model.Page@class)}">
+
+<head data-th-replace="/apps/coucou/page/fragments/head.html::default">
+</head>
+
+<body>
+
+<div class="wp-layout holygrail">
+    <main data-th-replace="/apps/coucou/page/fragments/journal.html::list">
+    </main>
+
+    <footer data-th-replace="/apps/coucou/page/fragments/journal.html::footer">
+    </footer>
+</div>
+</body>
+
+</html>

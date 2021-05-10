@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<nav data-th-fragment="footer-nav" class="blue-grey darken-3">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link grey-text text-darken-2" href="/content/coucou/villages.html">Villages</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link grey-text text-darken-2" href="/content/coucou/planner.html">Planner</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link grey-text text-darken-2" href="/content/coucou/contact.html">Contact Us</a>
+        </li>
+    </ul>
+</nav>
+
+<footer data-th-fragment="footer-panel" class="page-footer blue-grey">
+
+<!--    <nav data-th-replace="/apps/coucou/page/fragments/footer.html::footer-nav">-->
+<!--    </nav>-->
+
+<!--    <hr style="text-align: center; width: 70%">-->
+
+    <p>
+        Created with
+        <a href="http://whistlepost.org" target="_blank">Whistlepost</a> | &copy;
+        <span data-th-text="${resolver.getResource('/content/coucou/footer').valueMap['copyright']}">[Placeholder]</span>
+    </p>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/assets/coucou/js/coucou.bundle.js"></script>
+</footer>
+
+</body>
+</html>

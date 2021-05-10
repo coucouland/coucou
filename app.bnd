@@ -1,3 +1,4 @@
 Sling-Initial-Content: SLING-INF/content;path:=/apps/coucou;overwrite:=true
+Sling-Bundle-Resources: /assets/coucou;path:=/assets
 Bundle-Name: coucou-app
 Bundle-SymbolicName: org.mnode.coucou-app

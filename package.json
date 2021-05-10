@@ -1,0 +1,33 @@
+{
+  "name": "coucou-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "buildWebpack": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@beyonk/google-fonts-webpack-plugin": "^1.2.3",
+    "ajv": "^6.9.1",
+    "css-loader": "^3.4.2",
+    "expose-loader": "^0.7.3",
+    "file-loader": "^5.0.2",
+    "font-awesome": "^4.7.0",
+    "http-signature": "^1.2.0",
+    "jquery": "^3.2.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-pre-gyp": "^0.14.0",
+    "popper.js": "^1.16.0",
+    "rimraf": "^3.0.2",
+    "style-loader": "^1.1.3",
+    "vue": "^2.6.11",
+    "webpack": "^4.41.5"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10"
+  }
+}

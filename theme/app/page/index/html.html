@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-th-with="page=${request.adaptTo(@org.mnode.whistlepost.model.Page@class)}">
+
+<head data-th-replace="/apps/coucou/page/fragments/head.html::default">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="wp-layout app">
+    <header data-th-replace="/apps/coucou/page/fragments/masthead.html::default">
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" data-th-replace="/apps/coucou/page/fragments/navigation.html::sidenav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Coucou!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex justify-content-evenly">
+                    <div class="input-group">
+<!--                        <label for="exampleDataList" class="form-label">Village</label>-->
+                        <div class="input-group-text">Village</div>
+                        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+                            <option value="Global Village">
+                        </datalist>
+                    </div>
+<!--                </form>-->
+<!--                <form class="d-flex">-->
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<!--                    <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--                </form>-->
+<!--                <form class="d-flex">-->
+                    <div class="input-group">
+<!--                        <label for="exampleDataList" class="form-label">Profile</label>-->
+                        <div class="input-group-text">Profile</div>
+                        <input class="form-control" list="datalistOptions2" id="exampleDataList2" placeholder="Type to search...">
+                        <datalist id="datalistOptions2">
+                            <option value="Jazz Jackrabbit">
+                            <option value="Fou">
+                            <option value="e l b e n t o">
+                        </datalist>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="tab-content">
+            <div id="journal" class="tab-pane active">
+                journal content</div>
+            <div id="events" class="tab-pane">
+                events content</div>
+            <div id="tasks" class="tab-pane">
+                tasks content</div>
+        </div>
+        <ul class="nav nav-tabs nav-tabs-bottom">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" data-bs-target="#journal" data-bs-toggle="tab">Journal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#events" data-bs-toggle="tab">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#tasks" data-bs-toggle="tab">Tasks</a>
+            </li>
+        </ul>
+
+        <!--   Search box..     -->
+        
+        <!--   Sticky messages at top.. -->
+        <div id="results-sticky">
+            <h1>Loading..</h1>
+        </div>
+
+        <!--   Normal message results..     -->
+        <div id="results">
+            <h1>Loading..</h1>
+        </div>
+
+        <!--   Compose message at bottom..     -->
+        <div id="compose">
+            <textarea></textarea>
+        </div>
+    </main>
+
+    <footer data-th-replace="/apps/coucou/page/fragments/footer.html::footer-panel">
+    </footer>
+</div>
+</body>
+
+</html>

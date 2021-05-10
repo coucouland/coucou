@@ -1,0 +1,58 @@
+name: Coucou - Digital Ocean
+description: Provisioning for a Digital Ocean account
+
+vars:
+  environment:
+    description: Identifier for environment to provision
+  do_region:
+    description: Digitalocean region
+    default: sgp1
+  ssh_user:
+    description: SSH username
+    default: fortuna
+  ssh_key:
+    description: A digitalocean SSH key used to access droplets
+    default: odecee-mac
+  bastion_fqdn:
+    description: Bastion host name
+    default: "bastion.mnode.org"
+
+constellations:
+  bastion:
+    bastion-do:
+      floatingip_addresses: ["139.59.194.194"]
+      apex_domain: mnode.org
+      enabled: "false"
+    dns-record-do:
+      fqdn: "bastion.mnode.org"
+
+  coucouim:
+    dns-domain-do:
+      apex_domain: "coucou.im"
+      apex_target: "159.89.210.199"
+      aliases: ["www"]
+    nginx-vhost:
+      nginx_host: "reverseproxy.mnode.org"
+      hostnames: ["www.coucou.im", "coucou.im"]
+      target_type: apachesling_ssl
+      upstream_hosts: ["docker.mnode.org"]
+      letsencrypt_email: "fortuna@micronode.com"
+
+  ccusers:
+    dns-record-do:
+      fqdn: "vault.mnode.org"
+    storage-block-do:
+      volume_name: vault
+      volume_size: 5
+
+  ccprofile:
+    storage-bucket-do:
+      bucket_names: ["coucou-profile"]
+
+  ccjots:
+    storage-bucket-do:
+      bucket_names: ["coucou-jots"]
+
+  ccattachments:
+    storage-bucket-do:
+      bucket_names: ["coucou-attachments", "coucou-uploads"]
