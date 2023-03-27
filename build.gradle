@@ -1,6 +1,11 @@
 plugins {
     id 'java'
     id 'application'
+    id "biz.aQute.bnd.builder" version "5.1.2"
+    id 'java-library'
+    id 'maven-publish'
+    id 'signing'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.6'
 }
 
 java {
@@ -13,6 +18,11 @@ repositories {
     mavenCentral()
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 dependencies {
     implementation "info.picocli:picocli:$picocliVersion"
 
@@ -23,6 +33,89 @@ dependencies {
             'org.glassfish.jersey.media:jersey-media-json-jackson:3.1.1'
 
     runtimeOnly "org.slf4j:slf4j-log4j12:$slf4jVersion", "org.apache.logging.log4j:log4j:$log4jVersion"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+javadoc {
+    options {
+        links 'https://docs.oracle.com/en/java/javase/11/docs/api/',
+                'http://ical4j.github.io/docs/ical4j/api/3.1.0/',
+                'http://fasterxml.github.io/jackson-core/javadoc/2.13/',
+                'http://fasterxml.github.io/jackson-databind/javadoc/2.13/',
+                'http://fasterxml.github.io/jackson-dataformat-xml/javadoc/2.13/'
+    }
+}
+
+scmVersion {
+    tag {
+        prefix = 'coucou-'
+    }
+    versionCreator 'versionWithBranch'
+    branchVersionCreator = ['master': 'simple']
+}
+
+group = 'org.mnode.coucou'
+description = 'Calendar and resource management API'
+version = scmVersion.version
+
+jar {
+    manifest {
+        attributes (
+                'Implementation-Title': 'Coucou',
+                'Implementation-Version': version,
+                'Implementation-Vendor': 'Micronode'
+        )
+    }
+}
+
+ext {
+    isReleaseVersion = !version.endsWith("SNAPSHOT")
+}
+
+publishing {
+    publications {
+        coucou(MavenPublication) {
+            from components.java
+            pom.withXml {
+                asNode().appendNode('name', project.name)
+                asNode().appendNode('description', project.description)
+                asNode().appendNode('url', 'https://micronode.org/coucou')
+
+                def scmNode = asNode().appendNode('scm')
+                scmNode.appendNode('url', 'https://github.com/micronode/coucou')
+                scmNode.appendNode('connection', 'scm:git@github.com:micronode/coucou.git')
+                scmNode.appendNode('developerConnection', 'scm:git@github.com:micronode/coucou.git')
+
+                def licenseNode = asNode().appendNode('licenses').appendNode('license')
+                licenseNode.appendNode('name', 'Coucou - License')
+                licenseNode.appendNode('url', 'https://raw.githubusercontent.com/micronode/coucou/master/LICENSE')
+                licenseNode.appendNode('distribution', 'repo')
+
+                def developerNode = asNode().appendNode('developers').appendNode('developer')
+                developerNode.appendNode('id', 'fortuna')
+                developerNode.appendNode('name', 'Ben Fortuna')
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = version.endsWith('SNAPSHOT') ? "https://oss.sonatype.org/content/repositories/snapshots/" : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+}
+
+signing {
+    required { isReleaseVersion }
+    sign publishing.publications.coucou
 }
 
 application {
