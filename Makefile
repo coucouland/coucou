@@ -1,24 +1,46 @@
 SHELL:=/bin/bash
-REGISTRY?=micoronode
-IMAGE_NAME=coucou
-TAGS?=latest
-BUILD_ARGS?=
-JAVA_VERSION=11
-AWS_DEFAULT_REGION?=ap-southeast-2
+include .env
 
-DIAGRAMS=docker run -v "${PWD}:/work" figurate/diagrams python
+NEXT_VERSION=$(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
 
-.PHONY: all clean build tag push run
+.PHONY: all gradlew clean build changelog currentVersion markNextVersion tag push run \
+	verify release publish
 
-all: build
+all: test
+
+gradlew:
+	./gradlew wrapper --gradle-version=$(GRADLE_VERSION) --distribution-type=bin
 
 clean:
-	./gradlew clean && docker rmi $(REGISTRY)/$(IMAGE_NAME)
+	./gradlew clean
+
+test:
+	./gradlew test
 
 build:
-	./gradlew build && \
-		docker build -t $(REGISTRY)/$(IMAGE_NAME) ${BUILD_ARGS} --build-arg JAVA_VERSION=$(JAVA_VERSION) \
- 		--build-arg HTTP_PROXY=${http_proxy} --network=host .
+	./gradlew build
+
+installDist:
+	./gradlew installDist
+
+changelog:
+	git log "$(CHANGELOG_START_TAG)...$(CHANGELOG_END_TAG)" \
+    	--pretty=format:'* %s [View commit](http://github.com/ical4j/ical4j/commit/%H)' --reverse | grep -v Merge
+
+currentVersion:
+	./gradlew -q currentVersion
+
+markNextVersion:
+	./gradlew markNextVersion -Prelease.version=$(NEXT_VERSION)
+
+verify:
+	./gradlew verify
+
+release: verify
+	./gradlew release
+
+publish:
+	./gradlew publish
 
 tag:
 	echo $(TAGS) | tr "/," "-\n" | xargs -n1 -I % docker tag $(REGISTRY)/$(IMAGE_NAME) $(REGISTRY)/$(IMAGE_NAME):%
